@@ -1,0 +1,56 @@
+@import '~styles/imports.sass'
+
+.Pagination
+  +clearfix
+  margin-bottom: 15px
+
+  .panels + &
+    margin-top: 15px
+    margin-bottom: 0
+
+  a
+    display: block
+    text-decoration: none
+
+.Pagination-first,
+.Pagination-prev,
+.Pagination-page,
+.Pagination-gap,
+.Pagination-next,
+.Pagination-last
+  float: left
+  margin-left: 7px
+  height: 35px
+  line-height: 35px
+  text-align: center
+  border-radius: 5px
+  color: $blue_dark
+
+  &:first-child
+    margin-left: 0
+
+.Pagination-first,
+.Pagination-prev,
+.Pagination-page,
+.Pagination-next,
+.Pagination-last
+  &:hover
+    background: #fff
+
+.Pagination-page,
+.Pagination-gap
+  width: 30px
+
+.Pagination-first,
+.Pagination-prev,
+.Pagination-next,
+.Pagination-last
+  a
+    padding: 0 10px
+
+.Pagination-page.is-current
+  color: #fff
+  background: $blue_bg
+
+.Pagination-switcher
+  float: right

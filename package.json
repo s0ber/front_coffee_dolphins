@@ -43,6 +43,7 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.0",
     "font-awesome": "^4.4.0",
     "font-awesome-webpack": "0.0.4",
     "less": "^2.5.3",

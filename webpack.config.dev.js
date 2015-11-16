@@ -22,7 +22,7 @@ module.exports = {
   ],
   resolve: {
     root: path.join(__dirname, 'src'),
-    modulesDirectories: ['node_modules']
+    modulesDirectories: ['node_modules', 'components']
   },
   module: {
     loaders: [

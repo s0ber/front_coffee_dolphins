@@ -3,6 +3,6 @@ import 'font-awesome-webpack'
 
 import React from 'react'
 import {render} from 'react-dom'
-import {App} from './components/layout/App'
+import {App} from 'layouts/App'
 
 render(<App />, document.getElementById('root'))

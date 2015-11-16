@@ -1,0 +1,76 @@
+@import '~styles/imports.sass'
+
+.Panel
+  &.for-new_item
+    margin-bottom: 15px
+    border-radius: 5px
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .15)
+
+    .Panel-header
+      border: 1px dashed $blue_dark
+
+    .Panel-body
+      margin-top: 0
+      border-style: dashed
+      border-top: 0
+
+  &.for-login_form
+    display: inline-block
+    margin-top: 65px
+    width: 400px
+    text-align: left
+
+.Panels
+  .Panel
+    margin-bottom: 15px
+
+    &:last-child
+      margin-bottom: 0
+
+  &.is-images_list
+    margin-top: 15px
+
+    &:empty
+      margin-top: 0
+
+.Panel-header
+  +acts_as_panel_header
+  display: flex
+  border-radius: 5px 5px 0 0
+
+  > span.Panel-headerTitle
+    +text_overflow
+    flex-grow: 1
+
+  .Panel-headerButtons
+    flex-shrink: 0
+
+.Panel-headerLink
+  +acts_as_panel_header_link
+
+.Panel-body
+  +acts_as_panel_body
+  border-radius: 0 0 5px 5px
+
+  &.has-p15
+    padding: 15px
+
+  &.is-dark
+    background: $blue_light
+
+  &.is-standAlone
+    margin-top: 0
+    border-radius: 5px
+
+p.Panel-text
+  margin: 25px 0 0 0
+
+  &:first-child
+    margin-top: 0
+
+.Panel-footer
+  +acts_as_panel_body
+  padding: 15px
+  background: $blue_light
+  border-radius: 0 0 5px 5px
+

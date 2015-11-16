@@ -1,0 +1,27 @@
+@import '~styles/imports.sass'
+
+.PageTitle
+  position: absolute
+  display: flex
+  top: 15px
+  left: 15px
+  right: 0
+  padding: 10px 15px
+  height: 25px
+  font-size: $header_font_size
+  line-height: 25px
+  background: $blue_medium
+  color: $blue_dark
+  text-shadow: 0 1px rgba(255, 255, 255, .75)
+  border-radius: 5px
+
+  .layout.for-logged_out_user &
+    left: 0
+
+  > span
+    +text_overflow
+    flex-grow: 1
+
+.PageTitle-buttons
+  float: right
+  flex-shrink: 0

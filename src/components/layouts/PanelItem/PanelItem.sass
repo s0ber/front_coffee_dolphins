@@ -1,0 +1,40 @@
+@import '~styles/imports.sass'
+
+.PanelItem
+  margin-top: -1px
+
+  &:first-child
+    margin-top: 0
+
+    .PanelItem-header
+      border-radius: 5px 5px 0 0
+
+  &:last-child
+    .PanelItem-body
+      border-radius: 0 0 5px 5px
+
+.PanelItem-header
+  +acts_as_panel_header
+  display: flex
+
+  > .PanelItem-headerTitle
+    +text_overflow
+    flex-grow: 1
+
+.PanelItem-headerButtons
+  flex-shrink: 0
+
+.PanelItem-headerLink
+  +acts_as_panel_header_link
+
+.PanelItem-body
+  +acts_as_panel_body
+
+  &.has-p15
+    padding: 15px
+
+p.PanelItem-text
+  margin: 25px 0 0 0
+
+  &:first-child
+    margin-top: 0
