@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const ComponentResolverPlugin = require('component-resolver-webpack')
 
 module.exports = {
   devtool: 'eval',
@@ -10,13 +11,17 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: 'http://localhost:4000/static/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ResolverPlugin([
+      new ComponentResolverPlugin(['js'])
+    ])
   ],
   resolve: {
+    root: path.join(__dirname, 'src'),
     modulesDirectories: ['node_modules']
   },
   module: {
@@ -37,11 +42,19 @@ module.exports = {
       {
         test: /\.(jpg|png)$/,
         loader: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
       }
     ]
   },
   postcss: function() {
-    const autoprefixer = require('autoprefixer-core')
+    const autoprefixer = require('autoprefixer')
     return [autoprefixer]
   }
 }

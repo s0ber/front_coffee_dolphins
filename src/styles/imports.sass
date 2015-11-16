@@ -1,0 +1,50 @@
+$blue_dark: darken(#5D83A9, 5%)
+$blue_bg: #5D83A9
+$blue_medium: #D6DFE9
+$blue_light: #F5F7F9
+
+$green_dark: #308434
+$red_dark: #D20A2F
+
+$text_color: #555
+$text_color_medium: lighten($text_color, 15%)
+$text_color_light: lighten($text_color, 25%)
+
+$header_font_size: 14px
+$text_font_size: 13px
+
+$link_color: darken($blue_dark, 12%)
+
+=lh_100p
+  &:after
+    display: inline-block
+    content: ''
+    height: 100%
+    width: 0
+    vertical-align: top
+
+=no_select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=text_overflow
+  display: block
+  overflow: hidden !important
+  white-space: nowrap
+  text-overflow: ellipsis
+
+=clearfix
+  &:before,
+  &:after
+    content: ""
+    display: table
+
+  &:after
+    clear: both
+
+  &
+    zoom: 1
