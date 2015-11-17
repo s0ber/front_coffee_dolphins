@@ -1,4 +1,4 @@
-import './App.sass'
+import './Layout.sass'
 import React, {Component} from 'react'
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
@@ -23,17 +23,17 @@ import {CheckBoxesList} from 'forms/CheckBoxesList'
 import {RadioButtonsList} from 'forms/RadioButtonsList'
 import {Textarea} from 'forms/Textarea'
 
-export class App extends Component {
+export class Layout extends Component {
   render() {
     return (
-      <div className='App'>
-        <div className='App-main'>
-          <header className='App-header'>
+      <div className='Layout'>
+        <div className='Layout-main'>
+          <header className='Layout-header'>
             <Header />
           </header>
 
-          <div className='App-clearfix'>
-            <section className='App-content'>
+          <div className='Layout-clearfix'>
+            <section className='Layout-content'>
               <Page>
                 <Page.Title>
                   <SmallButton title='Импортировать' />
@@ -116,15 +116,15 @@ export class App extends Component {
               </Page>
             </section>
 
-            <aside className='App-sidebar'>
+            <aside className='Layout-sidebar'>
               <Menu />
             </aside>
           </div>
-          <div className='App-empty' />
+          <div className='Layout-empty' />
         </div>
 
-        <footer className='App-footer'>
-          <div className='App-footerInner'>
+        <footer className='Layout-footer'>
+          <div className='Layout-footerInner'>
             <Footer />
           </div>
         </footer>
