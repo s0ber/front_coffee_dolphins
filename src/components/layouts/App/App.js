@@ -19,6 +19,9 @@ import {Form} from 'forms/Form'
 import {TextBox} from 'forms/TextBox'
 import {SelectBox} from 'forms/SelectBox'
 import {CheckBox} from 'forms/CheckBox'
+import {CheckBoxesList} from 'forms/CheckBoxesList'
+import {RadioButtonsList} from 'forms/RadioButtonsList'
+import {Textarea} from 'forms/Textarea'
 
 export class App extends Component {
   render() {
@@ -48,6 +51,9 @@ export class App extends Component {
                             <TextBox label='Ваше имя' value='Сергей' />
                             <SelectBox label='Ваша страна' collection={[{text: 'Выберите страну'}, {text: 'Россия', value: 1}]} />
                             <CheckBox label='Вы согласны с правилами использования сайта?' />
+                            <CheckBoxesList label='Выберите участников' collection={[{text: 'Рита', value: 'rita'}, {text: 'Сергей', value: 'sergey'}]} />
+                            <RadioButtonsList label='Выберите тип лендинга' collection={[{text: 'Обычный', value: 1}, {text: 'Продвинутый', value: 2}, {text: 'Крутой', value: 3}]} />
+                            <Textarea label='Расскажите о себе' placeholder='Плииииззз...' value='Ну я, эм... Это самое.' />
                           </Form.Fields>
                           <Form.Actions>
                             <SmallButton color='green' title='Отправить' />
