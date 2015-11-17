@@ -4,16 +4,31 @@ import React, {Component} from 'react'
 export class Panel extends Component {
   render() {
     return (
-      <div className='Panel'>
-        <div className='Panel-header'>
-          <span className='Panel-headerTitle'>
-            <a href='#'>Кольцо Всевластия</a>
-          </span>
-          <div className='Panel-headerButtons'>
-          </div>
-        </div>
-        <div className='Panel-body'>
-        </div>
+      <div className='Panel'>{this.props.children}</div>
+    )
+  }
+}
+
+Panel.Header = class extends Component {
+  render() {
+    const Buttons = this.props.children && <div className='Panel-headerButtons'>{this.props.children}</div>
+
+    return (
+      <div className='Panel-header'>
+        <span className='Panel-headerTitle'>
+          {this.props.title}
+        </span>
+        {Buttons}
+      </div>
+    )
+  }
+}
+
+Panel.Body = class extends Component {
+  render() {
+    return (
+      <div className='Panel-body'>
+        {this.props.children}
       </div>
     )
   }
