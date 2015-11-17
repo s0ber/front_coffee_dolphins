@@ -48,7 +48,7 @@ export class App extends Component {
                       <Panel.Body>
                         <Form>
                           <Form.Fields>
-                            <TextBox label='Ваше имя' value='Сергей' />
+                            <TextBox label='Ваше имя' value='Сергей' error='обязательно для заполнения' />
                             <SelectBox label='Ваша страна' collection={[{text: 'Выберите страну'}, {text: 'Россия', value: 1}]} />
                             <CheckBox label='Вы согласны с правилами использования сайта?' />
                             <CheckBoxesList label='Выберите участников' collection={[{text: 'Рита', value: 'rita'}, {text: 'Сергей', value: 'sergey'}]} />
