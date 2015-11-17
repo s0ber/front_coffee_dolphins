@@ -1,6 +1,11 @@
 @import '~styles/imports.sass'
 
-.PageTitle
+.Page
+  position: relative
+  margin-left: 200px
+  padding: 75px 0 15px 15px
+
+.Page-title
   position: absolute
   display: flex
   top: 15px
@@ -22,6 +27,13 @@
     +text_overflow
     flex-grow: 1
 
-.PageTitle-buttons
+.Page-titleButtons
   float: right
   flex-shrink: 0
+
+.Page-body
+  min-height: 500px
+  background: $blue_light
+  border-radius: 5px
+  color: $text_color
+  padding: 15px

@@ -1,0 +1,86 @@
+@import '~styles/imports.sass'
+
+.List
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+.List p.panel-text
+  margin: 25px 15px 15px
+
+  &:first-child
+    margin-top: 15px
+
+// modifiers
+
+.List.is-table
+  position: relative
+  display: table
+  table-layout: fixed
+  width: 100%
+
+.List-inner
+  display: table-row
+
+.List-photo,
+.List-items
+  display: table-cell
+  vertical-align: top
+
+.List-photo
+  position: static
+  width: 175px
+  height: 175px
+  padding: 15px
+  box-sizing: border-box
+  border-right: 1px solid $blue_medium
+
+  img
+    position: relative
+    width: 145px
+    height: 145px
+    vertical-align: top
+    border-radius: 5px
+    box-sizing: border-box
+
+  &.has-reorder_icon
+    position: relative
+
+    &:hover
+      cursor: pointer
+
+    &:before
+      content: ''
+      position: absolute
+      top: 15px
+      bottom: 15px
+      left: 15px
+      right: 15px
+      background: rgba(#000, .5)
+      border-radius: 5px
+      z-index: 2
+      opacity: 0
+      transition: .2s opacity
+
+      .List:hover &
+        opacity: 1
+
+    .fa-arrows-v
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-top: -15px
+      margin-left: -10px
+      width: 20px
+      height: 30px
+      font-size: 26px
+      line-height: 30px
+      text-align: center
+      color: #fff
+      z-index: 3
+      opacity: 0
+
+      .List:hover &
+        opacity: 1
+

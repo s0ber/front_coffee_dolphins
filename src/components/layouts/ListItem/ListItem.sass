@@ -1,0 +1,23 @@
+@import '~styles/imports.sass'
+
+.ListItem
+  +clearfix
+  border-top: 1px solid $blue_medium
+
+  &:first-child
+    border-top: 0
+
+.ListItem-label
+  float: left
+  width: 25%
+  padding: 9px 15px
+  font-size: 12px
+  font-weight: bold
+  box-sizing: border-box
+
+.ListItem-value
+  float: left
+  padding: 9px 15px
+  width: 75%
+  box-sizing: border-box
+

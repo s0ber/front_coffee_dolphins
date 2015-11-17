@@ -4,10 +4,17 @@ import classNames from 'classnames'
 
 export class SmallButton extends Component {
   render() {
-    const buttonClasses = classNames('SmallButton', {'is-green': this.props.color == 'green'})
+    const buttonClasses = classNames('SmallButton', this.props.className, {
+      'is-green': this.props.color == 'green',
+      'is-red': this.props.color == 'red',
+      'is-icon': !!this.props.icon
+    })
+
+    const text = this.props.icon ? <i className={classNames('fa', 'fa-' + this.props.icon)} />
+                                 : this.props.children || this.props.title
 
     return (
-      <div className={buttonClasses}>{this.props.title}</div>
+      <div className={buttonClasses}>{text}</div>
     )
   }
 }

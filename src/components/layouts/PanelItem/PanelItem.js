@@ -7,12 +7,14 @@ export class PanelItem extends Component {
       <div className='PanelItem'>
         <div className='PanelItem-header'>
           <span className='PanelItem-headerTitle'>
-            <a href='#'>Кольцо Всевластия</a>
+            {this.props.title}
           </span>
           <div className='PanelItem-headerButtons'>
+            {this.props.buttons}
           </div>
         </div>
         <div className='PanelItem-body'>
+          {this.props.children}
         </div>
       </div>
     )

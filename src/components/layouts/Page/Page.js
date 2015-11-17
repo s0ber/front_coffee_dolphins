@@ -1,25 +1,30 @@
-import './PageTitle.sass'
-import './PageBody.sass'
+import './Page.sass'
 
 import React, {Component} from 'react'
 
-export class Title extends Component {
+export class Page extends Component {
   render() {
-    const Buttons = this.props.children && <div className='PageTitle-button'>{this.props.children}</div>
+    return (<div className='Page'>{this.props.children}</div>)
+  }
+}
+
+Page.Title = class extends Component {
+  render() {
+    const Buttons = this.props.children && <div className='Page-titleButton'>{this.props.children}</div>
 
     return (
-      <div className='PageTitle'>
-        <span className='PageTitle-text'>Позиции</span>
+      <div className='Page-title'>
+        <span className='Page-titleText'>Позиции</span>
         {Buttons}
       </div>
     )
   }
 }
 
-export class Body extends Component {
+Page.Body = class extends Component {
   render() {
     return (
-      <div className='PageBody'>{this.props.children}</div>
+      <div className='Page-body'>{this.props.children}</div>
     )
   }
 }
