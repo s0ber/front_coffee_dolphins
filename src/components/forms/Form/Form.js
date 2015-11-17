@@ -1,3 +1,4 @@
+import './Form.sass'
 import React, {Component} from 'react'
 
 export class Form extends Component {
@@ -14,6 +15,12 @@ Form.Fields = class extends Component {
 
 Form.Actions = class extends Component {
   render() {
-    return (<div className='Form-actions'>{this.props.children}</div>)
+    return (
+      <div className='Form-actions'>
+        <div className='Form-actionsInner'>
+          {this.props.children}
+        </div>
+      </div>
+    )
   }
 }

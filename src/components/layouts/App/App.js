@@ -15,6 +15,9 @@ import {Tag} from 'layouts/Tag'
 
 import {Icon} from 'icons/Icon'
 
+import {Form} from 'forms/Form'
+import {TextBox} from 'forms/TextBox'
+
 export class App extends Component {
   render() {
     return (
@@ -52,23 +55,28 @@ export class App extends Component {
                         <ListItem label='Прибыль'>182.0</ListItem>
                         <ListItem label='Доступность'>5</ListItem>
                         <ListItem label='Ключевые слова'>
-                          {[['кольцо из властелина колец', 554502],
-                            ['кольцо как из властелина колец', 554502],
-                            ['кольцо всевластия', 9927]].map((keyword, i) =>
-                            <Tag key={i} label={keyword[0]} value={keyword[1]} />)}
+                          <div className='Tags'>
+                            {[['кольцо из властелина колец', 554502],
+                              ['кольцо как из властелина колец', 554502],
+                              ['кольцо всевластия', 9927]].map((keyword, i) =>
+                              <Tag key={i} label={keyword[0]} value={keyword[1]} />)}
+                          </div>
                         </ListItem>
                       </List>
                     </PanelItem>
 
-                    <PanelItem>
-                      <List photoSrc='http://www.apishops.com/index.tree.ajax?action=image&id=1909766&big=true' photoTitle='Кольцо Всевластия'>
-                        <ListItem label='ID Позиции'>500119</ListItem>
-                        <ListItem label='Категории'>Украшения и бижутерия</ListItem>
-                        <ListItem label='Цена'>550.0</ListItem>
-                        <ListItem label='Прибыль'>182.0</ListItem>
-                        <ListItem label='Доступность'>5</ListItem>
-                        <ListItem label='Ключевые слова'></ListItem>
-                      </List>
+                    <PanelItem title={<a href='#'>Кольцо Всевластия</a>}>
+                      <Form>
+                        <Form.Fields>
+                          <TextBox label='Название' value='Кольцо Всевластия' required />
+                          <TextBox label='Категория' value='Украшения и бижутерия' />
+                          <TextBox label='Цена' value='550.0' hint='в рублях, дробная часть отделяется точкой' required />
+                        </Form.Fields>
+                        <Form.Actions>
+                          <SmallButton title='Отмена' />
+                          <SmallButton title='Сохранить' color='green'/>
+                        </Form.Actions>
+                      </Form>
                     </PanelItem>
                   </div>
                 </Page.Body>
