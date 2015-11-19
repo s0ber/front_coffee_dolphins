@@ -14,6 +14,7 @@ import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
 import {Tag} from 'layouts/Tag'
 import {EditableTag} from 'layouts/EditableTag'
+import {Note} from 'layouts/Note'
 import {Uploader} from 'layouts/Uploader'
 
 import {Icon} from 'icons/Icon'
@@ -25,6 +26,9 @@ import {CheckBox} from 'forms/CheckBox'
 import {CheckBoxesList} from 'forms/CheckBoxesList'
 import {RadioButtonsList} from 'forms/RadioButtonsList'
 import {Textarea} from 'forms/Textarea'
+
+import {Text} from 'inline/Text'
+import {Status} from 'inline/Status'
 
 export class Layout extends Component {
   render() {
@@ -46,6 +50,7 @@ export class Layout extends Component {
                 <Page.Body>
                   <Pagination />
                   <div className='Panels'>
+
                     <Panel>
                       <Panel.Header title='Форма в панельке' />
                       <Panel.Body>
@@ -120,6 +125,7 @@ export class Layout extends Component {
                         </PanelItem.Body>
                       </PanelItem>
                     </Panel>
+
                     <Panel>
                       <Panel.Header title='Редактирование лендинга' />
                       <Panel.Body hasPadding>
@@ -130,7 +136,9 @@ export class Layout extends Component {
                               <ListItem label='ID Позиции'>500119</ListItem>
                               <ListItem label='Категории'>Украшения и бижутерия</ListItem>
                               <ListItem label='Цена'>550.0</ListItem>
-                              <ListItem label='Прибыль'>182.0</ListItem>
+                              <ListItem label='Прибыль'>
+                                <Status green>Одобрено</Status>
+                              </ListItem>
                             </List>
                           </SimplePanel>
 
@@ -141,14 +149,54 @@ export class Layout extends Component {
                                 <TextBox isListValue value='Украшения и бижутерия' />
                               </ListItem>
                               <ListItem label='Цена'>550.0</ListItem>
-                              <ListItem label='Прибыль'>182.0</ListItem>
+                              <ListItem label='Прибыль'><Status red>Отклонено</Status></ListItem>
+
                             </List>
                           </SimplePanel>
                         </div>
                       </Panel.Body>
                     </Panel>
-                  </div>
 
+                    <Panel>
+                      <Panel.Header title='Список заметок'>
+                        <SmallButton disabled color='green' title='Добавить новую' />
+                      </Panel.Header>
+                      <Panel.Body hasPadding>
+                        <Note isNew>
+                          <Form>
+                            <Form.Fields>
+                              <TextBox label='Заголовок' required />
+                              <Textarea label='Текст заметки' required />
+                            </Form.Fields>
+
+                            <Form.Actions>
+                              <SmallButton title='Отмена' />
+                              <SmallButton title='Добавить заметку' color='green' />
+                            </Form.Actions>
+                          </Form>
+                        </Note>
+
+                        <div>
+                          <Note>
+                            <Note.Header title='Тестовая заметка' author='Сергей' date='17 ноября 2015, 23:33' />
+                            <Note.Body>
+                              <p>Содержимое заметки.</p>
+                            </Note.Body>
+                          </Note>
+                        </div>
+                      </Panel.Body>
+                    </Panel>
+
+                    <Panel>
+                      <Panel.Header title='Без заметок' />
+                      <Panel.Body hasPadding>
+                        <Text>
+                          <p>Нет заметок.</p>
+                        </Text>
+                      </Panel.Body>
+                    </Panel>
+
+                  </div>
                   <Pagination />
                 </Page.Body>
               </Page>

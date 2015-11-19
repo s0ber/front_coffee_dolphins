@@ -9,7 +9,7 @@ export class SmallButton extends Component {
       'is-green': this.props.color == 'green',
       'is-red': this.props.color == 'red',
       'is-icon': !!this.props.icon,
-      'is-disabled': this.props.isLoading,
+      'is-disabled': this.props.isLoading || this.props.disabled,
       'is-loading': this.props.isLoading
     })
 

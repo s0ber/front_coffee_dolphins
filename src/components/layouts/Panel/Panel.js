@@ -12,14 +12,12 @@ export class Panel extends Component {
 
 Panel.Header = class extends Component {
   render() {
-    const Buttons = this.props.children && <div className='Panel-headerButtons'>{this.props.children}</div>
-
     return (
       <div className='Panel-header'>
         <span className='Panel-headerTitle'>
           {this.props.title}
         </span>
-        {Buttons}
+        {this.props.children && <div className='Panel-headerButtons'>{this.props.children}</div>}
       </div>
     )
   }
