@@ -5,12 +5,10 @@ import {Icon} from 'icons/Icon'
 
 export class List extends Component {
   render() {
-    const DragIcon = this.props.isDraggable && (<Icon fa='arrows-v' />)
-
     const Photo = this.props.photoSrc && (
       <div className='List-photo'>
         <img src={this.props.photoSrc} title={this.props.photoTitle} />
-        {DragIcon}
+        {this.props.isDraggable && (<Icon fa='arrows-v' />)}
       </div>
     )
 

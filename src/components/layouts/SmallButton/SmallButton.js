@@ -1,5 +1,6 @@
 import './SmallButton.sass'
 import React, {Component} from 'react'
+import {ButtonLoader} from 'layouts/ButtonLoader'
 import classNames from 'classnames'
 
 export class SmallButton extends Component {
@@ -7,14 +8,19 @@ export class SmallButton extends Component {
     const buttonClasses = classNames('SmallButton', this.props.className, {
       'is-green': this.props.color == 'green',
       'is-red': this.props.color == 'red',
-      'is-icon': !!this.props.icon
+      'is-icon': !!this.props.icon,
+      'is-disabled': this.props.isLoading,
+      'is-loading': this.props.isLoading
     })
 
     const text = this.props.icon ? <i className={classNames('fa', 'fa-' + this.props.icon)} />
                                  : this.props.children || this.props.title
 
     return (
-      <div className={buttonClasses}>{text}</div>
+      <div className={buttonClasses}>
+        <div className='SmallButton-wrap'>{text}</div>
+        {this.props.isLoading && <ButtonLoader />}
+      </div>
     )
   }
 }

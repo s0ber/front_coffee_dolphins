@@ -114,7 +114,7 @@ export class Layout extends Component {
                             </Form.Fields>
                             <Form.Actions>
                               <SmallButton title='Отмена' />
-                              <SmallButton title='Сохранить' color='green'/>
+                              <SmallButton isLoading title='Сохранить' color='green'/>
                             </Form.Actions>
                           </Form>
                         </PanelItem.Body>
@@ -137,7 +137,9 @@ export class Layout extends Component {
                           <SimplePanel>
                             <List isDraggable photoSrc='http://www.apishops.com/index.tree.ajax?action=image&id=1909766&big=true' photoTitle='Кольцо Всевластия'>
                               <ListItem label='ID Позиции'>500119</ListItem>
-                              <ListItem label='Категории'>Украшения и бижутерия</ListItem>
+                              <ListItem label='Категории'>
+                                <TextBox isListValue value='Украшения и бижутерия' />
+                              </ListItem>
                               <ListItem label='Цена'>550.0</ListItem>
                               <ListItem label='Прибыль'>182.0</ListItem>
                             </List>
