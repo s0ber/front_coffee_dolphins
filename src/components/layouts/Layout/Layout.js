@@ -12,6 +12,7 @@ import {PanelItem} from 'layouts/PanelItem'
 import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
 import {Tag} from 'layouts/Tag'
+import {EditableTag} from 'layouts/EditableTag'
 
 import {Icon} from 'icons/Icon'
 
@@ -100,6 +101,14 @@ export class Layout extends Component {
                               <TextBox label='Название' value='Кольцо Всевластия' required />
                               <TextBox label='Категория' value='Украшения и бижутерия' />
                               <TextBox label='Цена' value='550.0' hint='в рублях, дробная часть отделяется точкой' required />
+                              <TextBox label='Ключевые слова' required>
+                                <div className='EditableTags'>
+                                  {[['кольцо из властелина колец', 554502],
+                                    ['кольцо как из властелина колец', 554502],
+                                    ['кольцо всевластия', 9927]].map((keyword, i) =>
+                                    <EditableTag key={i} label={keyword[0]} value={keyword[1]} />)}
+                                </div>
+                              </TextBox>
                             </Form.Fields>
                             <Form.Actions>
                               <SmallButton title='Отмена' />
