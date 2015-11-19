@@ -1,16 +1,23 @@
 import './List.sass'
 import React, {Component} from 'react'
+import classNames from 'classnames'
+import {Icon} from 'icons/Icon'
 
 export class List extends Component {
   render() {
+    const DragIcon = this.props.isDraggable && (<Icon fa='arrows-v' />)
+
     const Photo = this.props.photoSrc && (
       <div className='List-photo'>
         <img src={this.props.photoSrc} title={this.props.photoTitle} />
+        {DragIcon}
       </div>
     )
 
+    const listClasses = classNames('List', {'is-draggable': this.props.isDraggable})
+
     return (
-      <div className='List'>
+      <div className={listClasses}>
         <div className='List-inner'>
           {Photo}
           <div className='List-items'>

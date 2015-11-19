@@ -1,0 +1,93 @@
+@import '~styles/imports.sass'
+
+.Uploader
+  position: relative
+  width: 100%
+  height: 125px
+  cursor: pointer
+
+.Uploader-button
+  display: block
+  height: 100%
+  text-align: center
+  color: $text_color_light
+
+  input
+    font-size: 350px !important
+    width: 4850px !important
+    height: 100% !important
+    position: absolute
+    right: 0px
+    top: 0px
+    margin: 0px
+    padding: 0px
+    cursor: pointer
+    opacity: 0
+
+  .Uploader-buttonInner
+    display: block
+    position: absolute
+    padding: 4px
+    border: 1px dashed $blue_medium
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    line-height: 117px
+    border-radius: 5px
+    box-sizing: border-box
+
+  .Uploader-buttonTitle
+    display: inline-block
+    padding: 0 10px
+    text-align: left
+    vertical-align: middle
+
+  &.is-hover
+    color: #fff
+    cursor: pointer
+    border-radius: 2px
+
+  &.is-focus
+    outline: none
+
+.Uploader-buttonContent
+  display: block
+  height: 100%
+  background: $blue_light
+  border-radius: 5px
+
+.Uploader-dropArea
+  position: absolute
+  display: none
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  border-color: #5397DE
+  color: $blue_dark
+  text-shadow: 0 1px rgba(255, 255, 255, .75)
+  box-sizing: border-box
+  border-radius: 5px
+  z-index: 2
+
+  &.is-shown
+    display: block
+
+  .Uploader-buttonInner
+    border-color: $blue_dark
+
+  .Uploader-buttonContent
+    background: $blue_light
+
+  &.is-active
+    box-shadow: none
+
+    .Uploader-buttonInner
+      border-color: $blue_dark
+
+    .Uploader-buttonContent
+      background: $blue_dark
+      color: #fff
+      text-shadow: none
+

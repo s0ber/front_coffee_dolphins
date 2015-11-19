@@ -9,10 +9,12 @@ import {Filters} from 'layouts/Filters'
 import {Pagination} from 'layouts/Pagination'
 import {Panel} from 'layouts/Panel'
 import {PanelItem} from 'layouts/PanelItem'
+import {SimplePanel} from 'layouts/SimplePanel'
 import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
 import {Tag} from 'layouts/Tag'
 import {EditableTag} from 'layouts/EditableTag'
+import {Uploader} from 'layouts/Uploader'
 
 import {Icon} from 'icons/Icon'
 
@@ -117,6 +119,31 @@ export class Layout extends Component {
                           </Form>
                         </PanelItem.Body>
                       </PanelItem>
+                    </Panel>
+                    <Panel>
+                      <Panel.Header title='Редактирование лендинга' />
+                      <Panel.Body hasPadding>
+                        <Uploader />
+                        <div className='Panels'>
+                          <SimplePanel>
+                            <List isDraggable photoSrc='http://www.apishops.com/index.tree.ajax?action=image&id=1909766&big=true' photoTitle='Кольцо Всевластия'>
+                              <ListItem label='ID Позиции'>500119</ListItem>
+                              <ListItem label='Категории'>Украшения и бижутерия</ListItem>
+                              <ListItem label='Цена'>550.0</ListItem>
+                              <ListItem label='Прибыль'>182.0</ListItem>
+                            </List>
+                          </SimplePanel>
+
+                          <SimplePanel>
+                            <List isDraggable photoSrc='http://www.apishops.com/index.tree.ajax?action=image&id=1909766&big=true' photoTitle='Кольцо Всевластия'>
+                              <ListItem label='ID Позиции'>500119</ListItem>
+                              <ListItem label='Категории'>Украшения и бижутерия</ListItem>
+                              <ListItem label='Цена'>550.0</ListItem>
+                              <ListItem label='Прибыль'>182.0</ListItem>
+                            </List>
+                          </SimplePanel>
+                        </div>
+                      </Panel.Body>
                     </Panel>
                   </div>
 
