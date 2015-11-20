@@ -1,5 +1,6 @@
 import './Layout.sass'
 import React, {Component} from 'react'
+import {FlashMessages} from 'layouts/FlashMessages'
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
 import {Page} from 'layouts/Page'
@@ -16,6 +17,7 @@ import {Tag} from 'layouts/Tag'
 import {EditableTag} from 'layouts/EditableTag'
 import {Note} from 'layouts/Note'
 import {Uploader} from 'layouts/Uploader'
+import {Modal} from 'layouts/Modal'
 
 import {Icon} from 'icons/Icon'
 
@@ -26,14 +28,37 @@ import {CheckBox} from 'forms/CheckBox'
 import {CheckBoxesList} from 'forms/CheckBoxesList'
 import {RadioButtonsList} from 'forms/RadioButtonsList'
 import {Textarea} from 'forms/Textarea'
+import {FileBox} from 'forms/FileBox'
 
 import {Text} from 'inline/Text'
 import {Status} from 'inline/Status'
 
 export class Layout extends Component {
+  state = {
+    isFlashMessagesShown: false,
+    isModalShown: false
+  }
+
+  showModal = (e) => {
+    this.setState({isModalShown: true})
+  }
+
+  hideModal = (e) => {
+    this.setState({isModalShown: false})
+  }
+
+  toggleNotices = (e) => {
+    this.setState({isFlashMessagesShown: !this.state.isFlashMessagesShown})
+  }
+
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <div className='Layout'>
+        {this.state.isFlashMessagesShown && <FlashMessages />}
         <div className='Layout-main'>
           <header className='Layout-header'>
             <Header />
@@ -44,6 +69,8 @@ export class Layout extends Component {
               <Page>
                 <Page.Title>
                   <SmallButton title='Импортировать' />
+                  <SmallButton title='Показать модальное окно' onClick={this.showModal} />
+                  <SmallButton title='Вкл/выкл нотификации' onClick={this.toggleNotices} />
                   <SmallButton title='Добавить новую' color='green' />
                 </Page.Title>
                 <Filters />
@@ -214,6 +241,28 @@ export class Layout extends Component {
             <Footer />
           </div>
         </footer>
+
+        {this.state.isModalShown && <div className='Layout-modalBg' />}
+        {this.state.isModalShown && <div className='Layout-modals'>
+                                      <div className='Layout-modalsInner'>
+                                        <Modal>
+                                          <Modal.Header>
+                                            Тестовая модалка
+                                          </Modal.Header>
+                                          <Modal.Body>
+                                            <Form forModal>
+                                              <Form.Fields>
+                                                <FileBox required label='CSV файл' />
+                                              </Form.Fields>
+                                              <Form.Actions>
+                                                <SmallButton title='Отмена' onClick={this.hideModal} />
+                                                <SmallButton title='Сохранить' color='green' />
+                                              </Form.Actions>
+                                            </Form>
+                                          </Modal.Body>
+                                        </Modal>
+                                      </div>
+                                    </div>}
       </div>
     )
   }

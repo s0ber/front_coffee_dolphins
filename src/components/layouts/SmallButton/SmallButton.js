@@ -17,7 +17,7 @@ export class SmallButton extends Component {
                                  : this.props.children || this.props.title
 
     return (
-      <div className={buttonClasses}>
+      <div className={buttonClasses} onClick={this.props.onClick}>
         <div className='SmallButton-wrap'>{text}</div>
         {this.props.isLoading && <ButtonLoader />}
       </div>

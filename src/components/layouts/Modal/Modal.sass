@@ -1,0 +1,21 @@
+@import '~styles/imports.sass'
+
+.Modal
+  display: inline-block
+  text-align: left
+  width: 500px
+  border-radius: 5px
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, .05)
+  vertical-align: middle
+
+.Modal-header
+  +acts_as_panel_header
+  border-radius: 5px 5px 0 0
+
+.Modal-body
+  +acts_as_panel_body
+  padding: 0
+  border-radius: 0 0 5px 5px
+
+p.Modal-text
+  margin: 15px

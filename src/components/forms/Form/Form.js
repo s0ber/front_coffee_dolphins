@@ -1,9 +1,13 @@
 import './Form.sass'
 import React, {Component} from 'react'
+import classNames from 'classnames'
 
 export class Form extends Component {
   render() {
-    return (<form className='Form' action='#'>{this.props.children}</form>)
+    const formClasses = classNames('Form', {
+      'for-modal': this.props.forModal
+    })
+    return (<form className={formClasses} action='#'>{this.props.children}</form>)
   }
 }
 
