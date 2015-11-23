@@ -5,4 +5,6 @@ import React from 'react'
 import {render} from 'react-dom'
 import {Layout} from 'layouts/Layout'
 
-render(<Layout />, document.getElementById('root'))
+setTimeout(() =>
+  render(<Layout />, document.getElementById('root'))
+, 0)
