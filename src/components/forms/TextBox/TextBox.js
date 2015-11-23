@@ -1,8 +1,8 @@
 import './TextBox.sass'
 
 import React, {Component} from 'react'
-import {Label} from 'forms/Label'
-import {Hint} from 'forms/Hint'
+import {Label} from '../Label'
+import {Hint} from '../Hint'
 import classNames from 'classnames'
 
 export class TextBox extends Component {

@@ -1,9 +1,9 @@
 import './RadioButtonsList.sass'
 
 import React, {Component} from 'react'
-import {Label} from 'forms/Label'
-import {InlineLabel} from 'forms/InlineLabel'
-import {Hint} from 'forms/Hint'
+import {Label} from '../Label'
+import {InlineLabel} from '../InlineLabel'
+import {Hint} from '../Hint'
 
 export class RadioButtonsList extends Component {
   render() {

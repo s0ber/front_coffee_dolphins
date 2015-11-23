@@ -1,6 +1,6 @@
 import './Filters.sass'
 import React, {Component} from 'react'
-import {FlatButton} from 'layouts/FlatButton'
+import {FlatButton} from '../FlatButton'
 
 export class Filters extends Component {
   render() {

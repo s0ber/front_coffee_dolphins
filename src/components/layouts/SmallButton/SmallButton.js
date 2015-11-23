@@ -1,6 +1,6 @@
 import './SmallButton.sass'
 import React, {Component} from 'react'
-import {ButtonLoader} from 'layouts/ButtonLoader'
+import {ButtonLoader} from '../ButtonLoader'
 import classNames from 'classnames'
 
 export class SmallButton extends Component {

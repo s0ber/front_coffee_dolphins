@@ -1,7 +1,7 @@
 import './FlashMessages.sass'
 
 import React, {Component} from 'react'
-import {FlashMessage} from 'layouts/FlashMessage'
+import {FlashMessage} from '../FlashMessage'
 
 export class FlashMessages extends Component {
   render() {

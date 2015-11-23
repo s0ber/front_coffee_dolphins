@@ -1,7 +1,7 @@
 import './Label.sass'
 
 import React, {Component} from 'react'
-import {InlineError} from 'forms/InlineError'
+import {InlineError} from '../InlineError'
 import classNames from 'classnames'
 
 export class Label extends Component {
