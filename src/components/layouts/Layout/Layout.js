@@ -32,6 +32,7 @@ import {FileBox} from 'forms/FileBox'
 
 import {Text} from 'inline/Text'
 import {Status} from 'inline/Status'
+import {tinyActions as router} from 'redux-tiny-router'
 
 export class Layout extends Component {
   state = {
@@ -41,6 +42,10 @@ export class Layout extends Component {
 
   showModal = (e) => {
     this.setState({isModalShown: true})
+  }
+
+  openPage = () => {
+    this.props.dispatch(router.navigateTo('/', {asd: 123}))
   }
 
   hideModal = (e) => {
@@ -100,7 +105,7 @@ export class Layout extends Component {
                     <Panel>
                       <PanelItem>
                         <PanelItem.Header title={<a href='#'>Кольцо Всевластия</a>}>
-                          <SmallButton color='green' icon='plus' />
+                          <SmallButton color='green' icon='plus' onClick={this.openPage} />
                           <SmallButton className='is-like'><Icon fa='heart-o' /></SmallButton>
                           <SmallButton icon='pencil' />
                           <SmallButton color='red' icon='close' />
