@@ -69,7 +69,7 @@ export class Layout extends Component {
           <div className='Layout-clearfix'>
             <section className='Layout-content'>
               <Page>
-                <Page.Title>
+                <Page.Title selectedPage={selectedPage}>
                   <SmallButton title='Импортировать' />
                   <SmallButton title='Показать модальное окно' onClick={this.showModal} />
                   <SmallButton title='Вкл/выкл нотификации' onClick={this.toggleNotices} />

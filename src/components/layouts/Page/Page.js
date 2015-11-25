@@ -1,4 +1,5 @@
 import './Page.sass'
+import pages from 'constants/pages'
 
 import React, {Component} from 'react'
 
@@ -10,11 +11,11 @@ export class Page extends Component {
 
 Page.Title = class extends Component {
   render() {
+    const {selectedPage} = this.props
     const Buttons = this.props.children && <div className='Page-titleButton'>{this.props.children}</div>
-
     return (
       <div className='Page-title'>
-        <span className='Page-titleText'>Позиции</span>
+        <span className='Page-titleText'>{pages.find((page) => {return page.name === selectedPage}).ru}</span>
         {Buttons}
       </div>
     )

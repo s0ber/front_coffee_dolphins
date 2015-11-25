@@ -1,33 +1,7 @@
 import './Menu.sass'
 import React, {Component} from 'react'
 import classNames from 'classnames'
-
-const pages = [
-  {
-    name: 'positions',
-    ru: 'Позиции'
-  },
-  {
-    name: 'categories',
-    ru: 'Категории'
-  },
-  {
-    name: 'landings',
-    ru: 'Лендинги'
-  },
-  {
-    name: 'statistic',
-    ru: 'Статистика'
-  },
-  {
-    name: 'finance',
-    ru: 'Финансы'
-  },
-  {
-    name: 'users',
-    ru: 'Пользователи'
-  }
-]
+import pages from 'constants/pages'
 
 export class Menu extends Component {
   render() {
