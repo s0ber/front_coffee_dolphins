@@ -1,4 +1,5 @@
-import {combineReducers} from 'redux'
+import pages from './pages'
 
-export default function(state = {}, action) {
+export {
+  pages
 }

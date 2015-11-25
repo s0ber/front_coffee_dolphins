@@ -3,8 +3,9 @@ import thunk from 'redux-thunk'
 import {devTools} from 'redux-devtools'
 import {tinyMiddleware, tinyReducer} from 'redux-tiny-router'
 import createLogger from 'redux-logger'
-import rootReducer from 'reducers'
+import * as rootReducers from 'reducers'
 
+const reducers = combineReducers(Object.assign({}, tinyReducer, rootReducers))
 const middleware = [thunk, tinyMiddleware, createLogger()]
 const finalCreateStore = compose(
   applyMiddleware(...middleware),
@@ -12,6 +13,5 @@ const finalCreateStore = compose(
 )(createStore)
 
 export default function(data, url) {
-  const reducer = combineReducers(Object.assign({}, tinyReducer, rootReducer))
-  return finalCreateStore(reducer, data)
+  return finalCreateStore(reducers, data)
 }

@@ -4,12 +4,21 @@ import 'font-awesome-webpack'
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Layout} from '../components/layouts/Layout'
+import {tinyActions as router} from 'redux-tiny-router'
 
 class App extends Component {
   render() {
+    const {dispatch, ...others} = this.props
     return (
-      <Layout {...this.props} />
+      <Layout {...others} changePage={() => dispatch(router.navigateTo('/', {asd: 123}))} />
     )
   }
 }
-export default connect()(App)
+
+function select(state) {
+  return {
+    pages: state.pages
+  }
+}
+
+export default connect(select)(App)

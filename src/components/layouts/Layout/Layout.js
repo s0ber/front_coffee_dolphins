@@ -32,7 +32,6 @@ import {FileBox} from 'forms/FileBox'
 
 import {Text} from 'inline/Text'
 import {Status} from 'inline/Status'
-import {tinyActions as router} from 'redux-tiny-router'
 
 export class Layout extends Component {
   state = {
@@ -42,10 +41,6 @@ export class Layout extends Component {
 
   showModal = (e) => {
     this.setState({isModalShown: true})
-  }
-
-  openPage = () => {
-    this.props.dispatch(router.navigateTo('/', {asd: 123}))
   }
 
   hideModal = (e) => {
@@ -61,6 +56,8 @@ export class Layout extends Component {
   }
 
   render() {
+    const {changePage, pages} = this.props
+
     return (
       <div className='Layout'>
         {this.state.isFlashMessagesShown && <FlashMessages />}
@@ -105,7 +102,7 @@ export class Layout extends Component {
                     <Panel>
                       <PanelItem>
                         <PanelItem.Header title={<a href='#'>Кольцо Всевластия</a>}>
-                          <SmallButton color='green' icon='plus' onClick={this.openPage} />
+                          <SmallButton color='green' icon='plus' onClick={changePage} />
                           <SmallButton className='is-like'><Icon fa='heart-o' /></SmallButton>
                           <SmallButton icon='pencil' />
                           <SmallButton color='red' icon='close' />
@@ -235,7 +232,7 @@ export class Layout extends Component {
             </section>
 
             <aside className='Layout-sidebar'>
-              <Menu />
+              <Menu pages={pages} />
             </aside>
           </div>
           <div className='Layout-empty' />

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 
 export class Menu extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className='Menu'>
         <div className='Menu-header'>Меню</div>
