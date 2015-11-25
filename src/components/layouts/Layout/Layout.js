@@ -56,7 +56,7 @@ export class Layout extends Component {
   }
 
   render() {
-    const {changePage, pages} = this.props
+    const {changePage, selectedPage} = this.props
 
     return (
       <div className='Layout'>
@@ -232,7 +232,7 @@ export class Layout extends Component {
             </section>
 
             <aside className='Layout-sidebar'>
-              <Menu pages={pages} />
+              <Menu selectedPage={selectedPage} />
             </aside>
           </div>
           <div className='Layout-empty' />

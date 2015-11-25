@@ -17,7 +17,7 @@ class App extends Component {
 
 function select(state) {
   return {
-    pages: state.pages
+    selectedPage: state.selectedPage
   }
 }
 

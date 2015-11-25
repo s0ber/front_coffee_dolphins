@@ -1,5 +1,5 @@
-import pages from './pages'
+import selectedPage from './pages'
 
 export {
-  pages
+  selectedPage
 }
