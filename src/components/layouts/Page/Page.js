@@ -11,12 +11,10 @@ export class Page extends Component {
 
 Page.Title = class extends Component {
   render() {
-    const {selectedPage} = this.props
-    const Buttons = this.props.children && <div className='Page-titleButton'>{this.props.children}</div>
     return (
       <div className='Page-title'>
-        <span className='Page-titleText'>{pages.find((page) => {return page.name === selectedPage}).ru}</span>
-        {Buttons}
+        <span className='Page-titleText'>{this.props.text}</span>
+        {this.props.children && <div className='Page-titleButton'>{this.props.children}</div>}
       </div>
     )
   }

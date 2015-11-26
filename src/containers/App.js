@@ -8,12 +8,12 @@ import {tinyActions as router} from 'redux-tiny-router'
 
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
-import {Page} from 'layouts/Page'
 
-import {ExampleModal} from './ExampleModal'
-// import ExamplePage from './ExamplePage'
+import {Positions as PositionsPage} from './pages/Positions'
+import {Examples as ExamplesPage} from './pages/Examples'
+import {Example as ExampleModal} from './modals/Example'
 
-const SHOW_EXAMPLES = false
+const SHOW_EXAMPLES = true
 const SHOW_MODAL = false
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>
-              {SHOW_EXAMPLES ? <ExamplePage /> : <Page />}
+              {SHOW_EXAMPLES ? <ExamplesPage /> : <PositionsPage />}
             </Layout.Content>
             <Layout.Sidebar>
               <Menu />
@@ -37,8 +37,7 @@ class App extends Component {
         {SHOW_MODAL
           && <Layout.Modals>
               <ExampleModal />
-            </Layout.Modals>
-        }
+            </Layout.Modals>}
       </Layout>
     )
   }

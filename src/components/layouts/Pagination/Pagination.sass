@@ -2,10 +2,13 @@
 
 .Pagination
   +clearfix
+  margin-top: 15px
   margin-bottom: 15px
 
-  .Panels + &
-    margin-top: 15px
+  &:first-child
+    margin-top: 0
+
+  &:last-child
     margin-bottom: 0
 
   a
