@@ -14,7 +14,7 @@ export class PanelWithList extends Component {
     return (
       <Panel>
         <PanelItem>
-          <PanelItem.Header title={<a href='#'>Панелька со списком</a>}>
+          <PanelItem.Header title={<a href='#'>Панелька со списком + кнопки с иконками</a>}>
             <SmallButton color='green' icon='plus' />
             <SmallButton className='is-like'><Icon fa='heart-o' /></SmallButton>
             <SmallButton icon='pencil' />
