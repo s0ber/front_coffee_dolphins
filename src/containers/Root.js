@@ -10,7 +10,7 @@ export default class Root extends Component {
     const {store} = this.props
     return (
       <Provider store={store}>
-        <div>
+        <div id='app_root'>
           <App />
           <DebugPanel top right bottom>
             <DevTools store={store} monitor={LogMonitor} />
