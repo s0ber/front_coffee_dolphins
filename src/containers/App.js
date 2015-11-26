@@ -3,21 +3,24 @@ import 'font-awesome-webpack'
 
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
+import toComponentName from 'utils/to_component_name'
+
 import {Layout} from '../components/layouts/Layout'
 import {tinyActions as router} from 'redux-tiny-router'
 
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
 
-import {Positions as PositionsPage} from './pages/Positions'
-import {Examples as ExamplesPage} from './pages/Examples'
+import Pages from './pages'
 import {Example as ExampleModal} from './modals/Example'
 
-const SHOW_EXAMPLES = true
 const SHOW_MODAL = false
+const currentPageId = 'positions'
 
 class App extends Component {
   render() {
+    const CurrentPage = Pages[toComponentName(currentPageId)]
+
     return (
       <Layout >
         <Layout.Main>
@@ -26,10 +29,10 @@ class App extends Component {
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>
-              {SHOW_EXAMPLES ? <ExamplesPage /> : <PositionsPage />}
+              <CurrentPage />
             </Layout.Content>
             <Layout.Sidebar>
-              <Menu />
+              <Menu selectedPageId={currentPageId} />
             </Layout.Sidebar>
           </Layout.Body>
         </Layout.Main>

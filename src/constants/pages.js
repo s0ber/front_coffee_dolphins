@@ -12,15 +12,11 @@ export default [
     ru: 'Лендинги'
   },
   {
-    name: 'statistic',
-    ru: 'Статистика'
-  },
-  {
-    name: 'finance',
-    ru: 'Финансы'
-  },
-  {
     name: 'users',
     ru: 'Пользователи'
+  },
+  {
+    name: 'examples',
+    ru: 'Примеры компонентов'
   }
 ]

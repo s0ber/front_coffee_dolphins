@@ -49,6 +49,7 @@
     "font-awesome": "^4.4.0",
     "font-awesome-webpack": "0.0.4",
     "less": "^2.5.3",
+    "lodash": "^3.10.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
