@@ -1,5 +1,6 @@
 import './PanelItem.sass'
 import React, {Component} from 'react'
+import classNames from 'classnames'
 
 export class PanelItem extends Component {
   render() {
@@ -26,8 +27,10 @@ PanelItem.Header = class extends Component {
 
 PanelItem.Body = class extends Component {
   render() {
+    const panelItemBodyClasses = classNames('PanelItem-body', {'has-padding': this.props.hasPadding})
+
     return (
-      <div className='PanelItem-body'>
+      <div className={panelItemBodyClasses}>
         {this.props.children}
       </div>
     )

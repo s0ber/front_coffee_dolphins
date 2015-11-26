@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import {Panel} from 'layouts/Panel'
+import {PanelItem} from 'layouts/PanelItem'
 import {Note} from 'layouts/Note'
 import {SmallButton} from 'layouts/SmallButton'
 
@@ -8,14 +8,14 @@ import {Form} from 'forms/Form'
 import {TextBox} from 'forms/TextBox'
 import {Textarea} from 'forms/Textarea'
 
-export class PanelWithNotes extends Component {
+export class PanelItemWithNotes extends Component {
   render() {
     return (
-      <Panel>
-        <Panel.Header title='Список заметок'>
+      <PanelItem>
+        <PanelItem.Header title='Панелька вложенная со списком заметок'>
           <SmallButton disabled color='green' title='Добавить новую' />
-        </Panel.Header>
-        <Panel.Body hasPadding>
+        </PanelItem.Header>
+        <PanelItem.Body hasPadding>
           <Note isNew>
             <Form>
               <Form.Fields>
@@ -38,8 +38,8 @@ export class PanelWithNotes extends Component {
               </Note.Body>
             </Note>
           </div>
-        </Panel.Body>
-      </Panel>
+        </PanelItem.Body>
+      </PanelItem>
     )
   }
 }

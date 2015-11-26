@@ -3,8 +3,7 @@ import React, {Component} from 'react'
 import {PanelWithForm} from './panels/PanelWithForm'
 import {PanelWithList} from './panels/PanelWithList'
 import {PanelWithDraggableItems} from './panels/PanelWithDraggableItems'
-import {PanelWithNotes} from './panels/PanelWithNotes'
-import {PanelEmpty} from './panels/PanelEmpty'
+import {PanelWithPanelItems} from './panels/PanelWithPanelItems'
 
 import {Page} from 'layouts/Page'
 import {SmallButton} from 'layouts/SmallButton'
@@ -26,8 +25,7 @@ export class Examples extends Component {
             <PanelWithForm />
             <PanelWithList />
             <PanelWithDraggableItems />
-            <PanelWithNotes />
-            <PanelEmpty />
+            <PanelWithPanelItems />
           </div>
           <Pagination />
         </Page.Body>
