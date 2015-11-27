@@ -7,11 +7,13 @@ export default class Root extends Component {
   static propTypes = {store: PropTypes.object.isRequired}
 
   render() {
-    const {store} = this.props
     return (
-      <Provider store={store}>
+      <Provider store={this.props.store}>
         <div id='app_root'>
           <App />
+          <DebugPanel top right bottom>
+            <DevTools store={this.props.store} monitor={LogMonitor} />
+          </DebugPanel>
         </div>
       </Provider>
     )

@@ -6,7 +6,7 @@ export class FlatButton extends Component {
   render() {
     const buttonClasses = classNames('FlatButton', {'is-active': this.props.title == 'По популярности'})
     return (
-      <a href='#' className={buttonClasses}>{this.props.title}</a>
+      <span className={buttonClasses}>{this.props.title}</span>
     )
   }
 }

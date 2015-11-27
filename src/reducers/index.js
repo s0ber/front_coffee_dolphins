@@ -1,5 +1,5 @@
-import selectedPage from './pages'
+import currentPageId from './currentPageId'
 
 export {
-  selectedPage
+  currentPageId
 }

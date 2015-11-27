@@ -15,11 +15,14 @@ import Pages from './pages'
 import {Example as ExampleModal} from './modals/Example'
 
 const SHOW_MODAL = false
-const currentPageId = 'positions'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
-    const CurrentPage = Pages[toComponentName(currentPageId)]
+    const CurrentPage = Pages[toComponentName(this.props.currentPageId)]
 
     return (
       <Layout >
@@ -32,7 +35,7 @@ class App extends Component {
               <CurrentPage />
             </Layout.Content>
             <Layout.Sidebar>
-              <Menu selectedPageId={currentPageId} />
+              <Menu selectedPageId={this.props.currentPageId} />
             </Layout.Sidebar>
           </Layout.Body>
         </Layout.Main>
@@ -48,7 +51,7 @@ class App extends Component {
 
 function select(state) {
   return {
-    selectedPage: state.selectedPage
+    currentPageId: state.currentPageId
   }
 }
 

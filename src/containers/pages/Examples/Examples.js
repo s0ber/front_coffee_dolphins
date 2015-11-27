@@ -10,6 +10,8 @@ import {SmallButton} from 'layouts/SmallButton'
 import {Filters} from 'layouts/Filters'
 import {Pagination} from 'layouts/Pagination'
 
+import {EXAMPLES_PATH} from 'routes/paths'
+
 export class Examples extends Component {
   render() {
     return (
@@ -18,7 +20,10 @@ export class Examples extends Component {
           <SmallButton title='Показать модальное окно' color='green' onClick={this.showModal} />
           <SmallButton title='Вкл/выкл нотификации' onClick={this.toggleNotices} />
         </Page.Title>
-        <Filters />
+        <Filters>
+          <Filters.Item title='По популярности' />
+          <Filters.Item title='Избранное' path={EXAMPLES_PATH({filter: 'favorite'})} />
+        </Filters>
         <Page.Body>
           <Pagination />
           <div>
