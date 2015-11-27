@@ -3,5 +3,6 @@ export default {
   CATEGORIES_PATH: '/categories',
   LANDINGS_PATH: '/landings',
   USERS_PATH: '/users',
-  EXAMPLES_PATH: '/examples/:filter'
+  EXAMPLES_PATH: '/examples',
+  FILTERED_EXAMPLES_PATH: '/examples/:filter'
 }

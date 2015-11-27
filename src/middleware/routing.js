@@ -7,17 +7,38 @@ export default function routing({dispatch, getState}) {
   const routesList = Object.keys(routes).map((k) => routes[k])
   utils.setRoutes(routesList)
 
-  const defaultPath = paths.POSITIONS_PATH()
-
   return (next) => {
     return (action) => {
       if (action.type === 'ROUTER_NAVIGATION') {
         next(action)
 
         if (action.router.url == '/') {
-          return dispatch(tinyActions.navigateTo(defaultPath))
+          return dispatch(tinyActions.navigateTo(paths.POSITIONS_PATH()))
         } else {
-          return dispatch(changePage(action.router.paths[1] || 'positions'))
+          let pageId
+
+          switch (action.router.src) {
+            case routes.POSITIONS_PATH:
+              pageId = 'positions'
+              break
+            case routes.CATEGORIES_PATH:
+              pageId = 'categories'
+              break
+            case routes.LANDINGS_PATH:
+              pageId = 'landings'
+              break
+            case routes.USERS_PATH:
+              pageId = 'users'
+              break
+            case routes.EXAMPLES_PATH:
+            case routes.FILTERED_EXAMPLES_PATH:
+              pageId = 'examples'
+              break
+            default:
+              pageId = 'positions'
+          }
+
+          return dispatch(changePage(pageId))
         }
       }
 
