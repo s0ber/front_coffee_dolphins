@@ -28,3 +28,52 @@
 ### Redux conventions
 
 * FSA (https://github.com/acdlite/flux-standard-action)
+
+## Features Plan
+
+### Environment preparations (Nov 30—Dec 2)
+- [ ] integrate Immutable.js
+- [ ] integrate normalizr.js
+- [ ] integrate Karma runner
+- [ ] try using react test utils
+
+### Users (Dec 3—6)
+- [ ] authorization
+- [ ] login form
+- [ ] show users list
+- [ ] edit user
+- [ ] delete user
+- [ ] add new user
+
+### Landing Categories (Dec 7—8)
+- [ ] show categories list
+- [ ] edit category
+- [ ] delete category
+- [ ] add new category
+
+### Positions (initial stuff, Dec 9—10)
+- [ ] show positions list
+- [ ] edit position
+- [ ] delete position
+- [ ] add new position
+- [ ] paginate positions
+- [ ] show position
+
+### Landings (initial stuff, Dec 11)
+- [ ] show landings list
+- [ ] delete landing
+
+### Positions (advanced stuff, Dec 14—20)
+- [ ] like positions
+- [ ] show favorite positions
+- [ ] create landing for position
+- [ ] import positions
+- [ ] show position notes
+- [ ] edit notes
+- [ ] delete notes
+- [ ] add new notes
+
+### Landings (advanced stuff, Dec 21—27)
+- [ ] edit landings
+- [ ] manage landing images (with DND upload and DND sorting)
+- [ ] integrate CodeMirror
