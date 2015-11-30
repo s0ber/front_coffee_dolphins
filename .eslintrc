@@ -19,6 +19,7 @@
     "react"
   ],
   "rules": {
-    "react/jsx-uses-react": 1
+    "react/jsx-uses-react": 1,
+    "operator-linebreak": [2, "after"]
   }
 }
