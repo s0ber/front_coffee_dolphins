@@ -30,7 +30,7 @@ class App extends Component {
       <Layout >
         <Layout.Main>
           <Layout.Header>
-            <Header />
+            <Header currentUser={this.props.currentUser} />
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>

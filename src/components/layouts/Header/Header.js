@@ -8,9 +8,11 @@ export class Header extends Component {
       <div className='Header'>
         <img className='Header-logo' src={logo} />
         Coffee Dolphins
-        <div className='Header-userInfo'>
-          Вы вошли как <b>Сергей Шишкалов</b>, <a href='#'>выйти</a>
-        </div>
+        {this.props.currentUser &&
+          <div className='Header-userInfo'>
+            Вы вошли как <b>{this.props.currentUser.full_name}</b>, <a href='#'>выйти</a>
+          </div>
+        }
       </div>
     )
   }

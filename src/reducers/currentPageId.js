@@ -5,7 +5,7 @@ const initialState = 'positions'
 export default function(state = initialState, action = {}) {
   switch (action.type) {
     case CHANGE_PAGE_ID:
-      return action.payload.pageId
+      return action.payload
     default:
       return state
   }
