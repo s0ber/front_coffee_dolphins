@@ -1,6 +1,8 @@
+import {utils} from 'redux-tiny-router'
 import createPathFn from 'utils/create_path_fn'
 
 const routes = {
+  LOGIN: '/login',
   POSITIONS: '/positions',
   CATEGORIES: '/categories',
   LANDINGS: '/landings',
@@ -8,6 +10,9 @@ const routes = {
   EXAMPLES: '/examples',
   FILTERED_EXAMPLES: '/examples/:filter'
 }
+
+const routesList = Object.keys(routes).map((k) => routes[k])
+utils.setRoutes(routesList)
 
 const paths = {}
 
