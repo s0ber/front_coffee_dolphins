@@ -8,7 +8,7 @@ import toComponentName from 'utils/to_component_name'
 import {Layout} from '../components/layouts/Layout'
 import {tinyActions as router} from 'redux-tiny-router'
 
-import {Login} from './Login'
+import Login from './Login'
 
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'

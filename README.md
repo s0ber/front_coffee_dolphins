@@ -17,6 +17,7 @@
 * redux
 * react-redux (react bindings)
 * redux-tiny-router (routing, https://github.com/Agamennon/redux-tiny-router)
+* redux-form (integrate form components with redux store, https://github.com/erikras/redux-form)
 * normalizr (normalize nested responses, https://github.com/gaearon/normalizr)
 * reselect (pass redux state branches to react components, https://github.com/rackt/reselect)
 * immutable.js (https://github.com/facebook/immutable-js)

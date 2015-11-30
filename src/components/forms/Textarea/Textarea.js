@@ -6,13 +6,11 @@ import {Hint} from '../Hint'
 
 export class Textarea extends Component {
   render() {
-    const hint = this.props.hint && <Hint {...this.props} />
-
     return (
       <div className='Textarea'>
         <Label {...this.props} />
-        <textarea value={this.props.value} placeholder={this.props.placeholder} />
-        {hint}
+        <textarea placeholder={this.props.placeholder} {...this.props} />
+        {this.props.hint && <Hint text={this.props.hint} />}
       </div>
     )
   }
