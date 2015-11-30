@@ -10,7 +10,7 @@ import {SmallButton} from 'layouts/SmallButton'
 import {Filters} from 'layouts/Filters'
 import {Pagination} from 'layouts/Pagination'
 
-import {FILTERED_EXAMPLES_PATH} from 'routes/paths'
+import {paths} from 'routes'
 
 export class Examples extends Component {
   render() {
@@ -22,7 +22,7 @@ export class Examples extends Component {
         </Page.Title>
         <Filters>
           <Filters.Item title='По популярности' />
-          <Filters.Item title='Избранное' path={FILTERED_EXAMPLES_PATH({filter: 'favorite'})} />
+          <Filters.Item title='Избранное' path={paths.FILTERED_EXAMPLES_PATH({filter: 'favorite'})} />
         </Filters>
         <Page.Body>
           <Pagination />

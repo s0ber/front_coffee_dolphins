@@ -1,4 +1,4 @@
-import {CHANGE_PAGE_ID} from '../actions'
+import {CHANGE_PAGE_ID} from 'actions'
 
 const initialState = 'positions'
 

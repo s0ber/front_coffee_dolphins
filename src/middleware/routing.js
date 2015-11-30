@@ -1,6 +1,5 @@
 import {tinyActions, utils} from 'redux-tiny-router'
-import routes from 'routes/routes'
-import paths from 'routes/paths'
+import {routes, paths} from 'routes'
 import changePage from 'action_creators/changePage'
 
 export default function routing({dispatch, getState}) {
@@ -18,20 +17,20 @@ export default function routing({dispatch, getState}) {
           let pageId
 
           switch (action.router.src) {
-            case routes.POSITIONS_PATH:
+            case routes.POSITIONS:
               pageId = 'positions'
               break
-            case routes.CATEGORIES_PATH:
+            case routes.CATEGORIES:
               pageId = 'categories'
               break
-            case routes.LANDINGS_PATH:
+            case routes.LANDINGS:
               pageId = 'landings'
               break
-            case routes.USERS_PATH:
+            case routes.USERS:
               pageId = 'users'
               break
-            case routes.EXAMPLES_PATH:
-            case routes.FILTERED_EXAMPLES_PATH:
+            case routes.EXAMPLES:
+            case routes.FILTERED_EXAMPLES:
               pageId = 'examples'
               break
             default:
