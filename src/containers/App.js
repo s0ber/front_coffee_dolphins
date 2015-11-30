@@ -8,6 +8,8 @@ import toComponentName from 'utils/to_component_name'
 import {Layout} from '../components/layouts/Layout'
 import {tinyActions as router} from 'redux-tiny-router'
 
+import {Login} from './Login'
+
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
 
@@ -32,18 +34,19 @@ class App extends Component {
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>
-              <CurrentPage />
+              {this.props.currentUser ? <CurrentPage /> : <Login />}
             </Layout.Content>
-            <Layout.Sidebar>
-              <Menu selectedPageId={this.props.currentPageId} />
-            </Layout.Sidebar>
+            {this.props.currentUser &&
+              <Layout.Sidebar>
+                <Menu selectedPageId={this.props.currentPageId} />
+              </Layout.Sidebar>}
           </Layout.Body>
         </Layout.Main>
         <Layout.Footer />
-        {SHOW_MODAL
-          && <Layout.Modals>
-              <ExampleModal />
-            </Layout.Modals>}
+        {SHOW_MODAL &&
+          <Layout.Modals>
+            <ExampleModal />
+          </Layout.Modals>}
       </Layout>
     )
   }
@@ -51,7 +54,8 @@ class App extends Component {
 
 function select(state) {
   return {
-    currentPageId: state.currentPageId
+    currentPageId: state.currentPageId,
+    currentUser: state.currentUser
   }
 }
 

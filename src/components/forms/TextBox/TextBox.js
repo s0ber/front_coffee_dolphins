@@ -14,7 +14,9 @@ export class TextBox extends Component {
     return (
       <div className={textBoxClasses}>
         {this.props.label && <Label {...other} />}
-        <input type='text' value={this.props.value} />
+        {this.props.password ? <input type='password' value={this.props.value} /> :
+                               <input type='text' value={this.props.value} />}
+
         {hint}
         {this.props.children}
       </div>
