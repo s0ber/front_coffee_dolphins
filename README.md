@@ -11,6 +11,7 @@
 * mocha.js, chai.js, sinon.js (testing utils)
 * PostCss (autoprefixer, css vars, css4, etc.)
 * ESLint (javascript code linter, https://github.com/eslint/eslint, https://github.com/babel/babel-eslint, https://github.com/babel/eslint-plugin-babel, https://github.com/yannickcr/eslint-plugin-react)
+* superagent (ajax requests, https://github.com/visionmedia/superagent)
 
 ### Redux ecosystem
 

@@ -1,6 +1,6 @@
 import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
-import changePage from 'action_creators/changePage'
+import changePageId from 'action_creators/changePageId'
 
 export function processRouteChange(dispatch, getState, router) {
   const {currentUser} = getState()
@@ -37,5 +37,5 @@ export function processRouteChange(dispatch, getState, router) {
       pageId = 'positions'
   }
 
-  return dispatch(changePage(pageId))
+  return dispatch(changePageId(pageId))
 }
