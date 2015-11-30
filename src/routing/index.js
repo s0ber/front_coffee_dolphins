@@ -34,7 +34,7 @@ export function processRouteChange(dispatch, getState, router) {
       pageId = 'examples'
       break
     default:
-      pageId = 'positions'
+      pageId = null
   }
 
   return dispatch(changePageId(pageId))

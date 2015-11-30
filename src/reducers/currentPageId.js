@@ -1,6 +1,6 @@
 import {CHANGE_PAGE_ID} from 'actions'
 
-const initialState = 'positions'
+const initialState = null
 
 export default function(state = initialState, action = {}) {
   switch (action.type) {
