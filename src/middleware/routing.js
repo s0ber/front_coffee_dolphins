@@ -5,7 +5,7 @@ export default function routing({dispatch, getState}) {
     return (action) => {
       if (action.type === 'ROUTER_NAVIGATION') {
         next(action)
-        processRouteChange(dispatch, getState, action.router)
+        return processRouteChange(dispatch, getState, action.router)
       }
 
       return (next(action))
