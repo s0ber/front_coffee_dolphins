@@ -12,7 +12,7 @@ import {Pagination} from 'layouts/Pagination'
 
 import {paths} from 'routes'
 
-export class Examples extends Component {
+export default class extends Component {
   render() {
     return (
       <Page>

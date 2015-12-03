@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Page} from 'layouts/Page'
 
-export class Users extends Component {
+export default class extends Component {
   render() {
     return (
       <Page>

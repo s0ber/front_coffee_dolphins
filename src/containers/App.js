@@ -3,18 +3,17 @@ import 'font-awesome-webpack'
 
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
-import toComponentName from 'utils/to_component_name'
 
 import {Layout} from '../components/layouts/Layout'
 import {tinyActions as router} from 'redux-tiny-router'
 
-import Login from './Login'
-
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
 
-import Pages from './pages'
+import CurrentPage from './CurrentPage'
 import {Example as ExampleModal} from './modals/Example'
+
+import logoutUser from 'action_creators/logoutUser'
 
 const SHOW_MODAL = false
 
@@ -24,19 +23,23 @@ class App extends Component {
   }
 
   render() {
-    const CurrentPage = Pages[toComponentName(this.props.currentPageId)]
+    const isAuthorized = this.props.currentUser && this.props.currentUser.role !== 'Anonymous'
 
     return (
       <Layout >
         <Layout.Main>
           <Layout.Header>
-            <Header currentUser={this.props.currentUser} />
+            <Header isAuthorized={isAuthorized}
+              currentUser={this.props.currentUser}
+              handleLogoutClick={() => {
+                this.props.dispatch(logoutUser())
+              }} />
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>
-              {this.props.currentUser ? <CurrentPage /> : <Login />}
+              <CurrentPage />
             </Layout.Content>
-            {this.props.currentUser &&
+            {isAuthorized &&
               <Layout.Sidebar>
                 <Menu selectedPageId={this.props.currentPageId} />
               </Layout.Sidebar>}

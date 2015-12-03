@@ -11,9 +11,11 @@ export default class Root extends Component {
       <Provider store={this.props.store}>
         <div id='app_root'>
           <App />
-          <DebugPanel top right bottom>
-            <DevTools store={this.props.store} monitor={LogMonitor} />
-          </DebugPanel>
+          {/*
+            <DebugPanel top right bottom>
+              <DevTools store={this.props.store} monitor={LogMonitor} />
+            </DebugPanel>
+            */}
         </div>
       </Provider>
     )

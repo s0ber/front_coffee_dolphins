@@ -8,9 +8,9 @@ export class Header extends Component {
       <div className='Header'>
         <img className='Header-logo' src={logo} />
         Coffee Dolphins
-        {this.props.currentUser &&
+        {this.props.isAuthorized &&
           <div className='Header-userInfo'>
-            Вы вошли как <b>{this.props.currentUser.full_name}</b>, <a href='#'>выйти</a>
+            Вы вошли как <b>{this.props.currentUser.full_name}</b>, <span className='Header-logout' onClick={this.props.handleLogoutClick}>выйти</span>
           </div>
         }
       </div>
