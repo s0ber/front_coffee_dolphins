@@ -12,10 +12,8 @@ import {SmallButton} from 'layouts/SmallButton'
 const fields = ['email', 'password', 'remember_me']
 
 class Login extends Component {
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const fieldsValues = this.props.loginForm ? getValues(this.props.loginForm) : {}
-    return this.props.dispatch(loginUser(fieldsValues))
+  submit = (values) => {
+    return this.props.dispatch(loginUser(values))
   }
 
   render() {
@@ -25,14 +23,14 @@ class Login extends Component {
       <Panel forLoginForm>
         <Panel.Header title='Lasciate ogne speranza, voi ch’intrate' />
         <Panel.Body>
-          <Form handleSubmit={this.handleSubmit}>
+          <Form onSubmit={this.props.handleSubmit(this.submit)}>
             <Form.Fields>
               <TextBox required label='Email' {...email} />
               <TextBox password label='Пароль' {...password} />
               <CheckBox label='Запомнить меня' {...remember_me} />
             </Form.Fields>
             <Form.Actions>
-              <SmallButton submit isLoading={this.props.submitting} title='Войти' color='green' onClick={this.handleSubmit} />
+              <SmallButton submit isLoading={this.props.submitting} title='Войти' color='green' />
             </Form.Actions>
           </Form>
         </Panel.Body>

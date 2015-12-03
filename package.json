@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.0",
+    "cookies-js": "^1.2.2",
     "font-awesome": "^4.4.0",
     "font-awesome-webpack": "0.0.4",
     "less": "^2.5.3",

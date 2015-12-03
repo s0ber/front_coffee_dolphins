@@ -30,10 +30,10 @@ class App extends Component {
         <Layout.Main>
           <Layout.Header>
             <Header isAuthorized={isAuthorized}
-              currentUser={this.props.currentUser}
-              handleLogoutClick={() => {
-                this.props.dispatch(logoutUser())
-              }} />
+                    currentUser={this.props.currentUser}
+                    onLogout={() => {
+                      this.props.dispatch(logoutUser())
+                    }} />
           </Layout.Header>
           <Layout.Body>
             <Layout.Content>

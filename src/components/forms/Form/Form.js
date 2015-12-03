@@ -8,7 +8,7 @@ export class Form extends Component {
       'for-modal': this.props.forModal
     })
     return (
-      <form className={formClasses} onSubmit={this.props.handleSubmit}>
+      <form className={formClasses} onSubmit={this.props.onSubmit}>
         {this.props.children}
       </form>
     )

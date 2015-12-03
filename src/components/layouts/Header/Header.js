@@ -10,7 +10,7 @@ export class Header extends Component {
         Coffee Dolphins
         {this.props.isAuthorized &&
           <div className='Header-userInfo'>
-            Вы вошли как <b>{this.props.currentUser.full_name}</b>, <span className='Header-logout' onClick={this.props.handleLogoutClick}>выйти</span>
+            Вы вошли как <b>{this.props.currentUser.full_name}</b>, <span className='Header-logout' onClick={this.props.onLogout}>выйти</span>
           </div>
         }
       </div>

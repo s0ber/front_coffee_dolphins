@@ -6,7 +6,7 @@ import {paths} from 'routes'
 export default function() {
   return (dispatch) => {
     return post('current_user#logout').then((res) => {
-      if (res.current_user_login.body[0]) {
+      if (!res.current_user_logout.status) {
         dispatch({type: LOGOUT_USER})
         dispatch(tinyActions.navigateTo(paths.LOGIN_PATH()))
       }
