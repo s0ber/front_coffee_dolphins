@@ -9,8 +9,6 @@ import {TextBox} from 'forms/TextBox'
 import {CheckBox} from 'forms/CheckBox'
 import {SmallButton} from 'layouts/SmallButton'
 
-const fields = ['email', 'password', 'remember_me']
-
 class Login extends Component {
   submit = (values) => {
     return this.props.dispatch(loginUser(values))
@@ -39,14 +37,6 @@ class Login extends Component {
   }
 }
 
-Login = reduxForm({
-  form: 'login', fields
+export default reduxForm({
+  form: 'login', fields: ['email', 'password', 'remember_me']
 })(Login)
-
-function select(state) {
-  return {
-    loginForm: state.form.login
-  }
-}
-
-export default connect(select)(Login)
