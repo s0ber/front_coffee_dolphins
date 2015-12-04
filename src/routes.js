@@ -2,6 +2,7 @@ import {utils} from 'redux-tiny-router'
 import createPathFn from 'utils/create_path_fn'
 
 const routes = {
+  ROOT: '/',
   LOGIN: '/login',
   POSITIONS: '/positions',
   CATEGORIES: '/categories',

@@ -2,28 +2,22 @@ import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
 import changePageId from 'action_creators/changePageId'
 
-export function processRouteChange(dispatch, getState, router) {
-  const {currentUser} = getState()
-
-  const defaultPath = paths.POSITIONS_PATH()
+export function processRouteChange(router, currentUser, dispatch) {
+  const currentRoute = router.src
   const isAuthorized = currentUser && currentUser.role !== 'Anonymous'
-  const currentRoute = getState().router.src
 
-  if (currentRoute !== routes.LOGIN && !isAuthorized) {
-    return dispatch(tinyActions.navigateTo(paths.LOGIN_PATH()))
-  }
-
-  if (currentRoute == routes.LOGIN && isAuthorized) {
-    return dispatch(tinyActions.navigateTo(defaultPath))
-  }
-
-  if (router.url == '/') {
+  if (!isAuthorized) {
+    if (currentRoute !== routes.LOGIN) {
+      return dispatch(tinyActions.navigateTo(paths.LOGIN_PATH()))
+    }
+  } else if (currentRoute == routes.LOGIN || currentRoute == routes.ROOT) {
+    const defaultPath = paths.POSITIONS_PATH()
     return dispatch(tinyActions.navigateTo(defaultPath))
   }
 
   let pageId
 
-  switch (router.src) {
+  switch (currentRoute) {
     case routes.POSITIONS:
       pageId = 'positions'
       break

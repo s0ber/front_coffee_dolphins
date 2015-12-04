@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {reduxForm, getValues} from 'redux-form'
+import {reduxForm} from 'redux-form'
 import loginUser from 'action_creators/loginUser'
 
 import {Panel} from 'layouts/Panel'
