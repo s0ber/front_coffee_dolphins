@@ -1,8 +1,12 @@
-export const ROUTER_NAVIGATION = 'ROUTER_NAVIGATION'
-export const CHANGE_PAGE_ID = 'CHANGE_PAGE_ID'
+import keyMirror from 'keymirror'
 
-export const LOGIN_USER = 'LOGIN_USER'
-export const LOGOUT_USER = 'LOGOUT_USER'
+export default keyMirror({
+  ROUTER_NAVIGATION: null,
+  CHANGE_PAGE_ID: null,
 
-export const CURRENT_USER_REQUESTED = 'CURRENT_USER_REQUESTED'
-export const CURRENT_USER_UPDATED = 'CURRENT_USER_UPDATED'
+  LOGIN_USER: null,
+  LOGOUT_USER: null,
+
+  CURRENT_USER_REQUESTED: null,
+  CURRENT_USER_UPDATED: null
+})
