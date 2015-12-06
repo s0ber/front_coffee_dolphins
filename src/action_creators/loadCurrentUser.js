@@ -9,8 +9,8 @@ export default function() {
     dispatch({type: CURRENT_USER_REQUESTED})
 
     return get('current_user#show').then((res) => {
-      if (res.current_user_show && res.current_user_show.body) {
-        const currentUser = res.current_user_show.body[0]
+      if (res.current_user_show) {
+        const currentUser = res.current_user_show.body
 
         dispatch({
           type: CURRENT_USER_UPDATED,
