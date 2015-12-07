@@ -20,6 +20,13 @@ import hideFlashMessage from 'action_creators/hideFlashMessage'
 
 const SHOW_MODAL = false
 
+@connect((state) => {
+  return {
+    flashMessages: state.flashMessages,
+    currentPageId: state.currentPageId,
+    currentUser: state.currentUser
+  }
+})
 class App extends Component {
   constructor(props) {
     super(props)
@@ -68,12 +75,4 @@ class App extends Component {
   }
 }
 
-function select(state) {
-  return {
-    flashMessages: state.flashMessages,
-    currentPageId: state.currentPageId,
-    currentUser: state.currentUser
-  }
-}
-
-export default connect(select)(App)
+export default App

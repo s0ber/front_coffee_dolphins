@@ -5,6 +5,12 @@ import React, {Component} from 'react'
 import Pages from './pages'
 import {PageLoader} from 'layouts/PageLoader'
 
+@connect((state) => {
+  return {
+    currentUser: state.currentUser,
+    currentPageId: state.currentPageId
+  }
+})
 class CurrentPage extends Component {
   render() {
     if (this.props.currentPageId) {
@@ -16,9 +22,4 @@ class CurrentPage extends Component {
   }
 }
 
-export default connect((state) => {
-  return {
-    currentUser: state.currentUser,
-    currentPageId: state.currentPageId
-  }
-})(CurrentPage)
+export default CurrentPage
