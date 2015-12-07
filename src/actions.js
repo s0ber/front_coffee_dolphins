@@ -1,6 +1,9 @@
 import keyMirror from 'keymirror'
 
 export default keyMirror({
+  SHOW_FLASH_MESSAGE: null,
+  HIDE_FLASH_MESSAGE: null,
+
   ROUTER_NAVIGATION: null,
   CHANGE_PAGE_ID: null,
 

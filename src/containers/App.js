@@ -7,6 +7,8 @@ import {connect} from 'react-redux'
 import {Layout} from '../components/layouts/Layout'
 import {tinyActions as router} from 'redux-tiny-router'
 
+import {FlashMessages} from 'layouts/FlashMessages'
+import {FlashMessage} from 'layouts/FlashMessage'
 import {Header} from 'layouts/Header'
 import {Menu} from 'layouts/Menu'
 
@@ -14,6 +16,7 @@ import CurrentPage from './CurrentPage'
 import {Example as ExampleModal} from './modals/Example'
 
 import logoutUser from 'action_creators/logoutUser'
+import hideFlashMessage from 'action_creators/hideFlashMessage'
 
 const SHOW_MODAL = false
 
@@ -27,6 +30,16 @@ class App extends Component {
 
     return (
       <Layout >
+        {(this.props.flashMessages.length > 0) &&
+          <FlashMessages>
+            {this.props.flashMessages.map((message, i) => {
+              return <FlashMessage key={i}
+                                   message={message}
+                                   onClose={() => {
+                                     this.props.dispatch(hideFlashMessage(message))
+                                   }}/>
+            })}
+          </FlashMessages>}
         <Layout.Main>
           <Layout.Header>
             <Header isAuthorized={isAuthorized}
@@ -57,6 +70,7 @@ class App extends Component {
 
 function select(state) {
   return {
+    flashMessages: state.flashMessages,
     currentPageId: state.currentPageId,
     currentUser: state.currentUser
   }

@@ -1,9 +1,6 @@
 import get from 'utils/api/get'
 import {CURRENT_USER_UPDATED, CURRENT_USER_REQUESTED} from 'actions'
 
-function updateCurrentUser(currentUser) {
-}
-
 export default function() {
   return function(dispatch) {
     dispatch({type: CURRENT_USER_REQUESTED})

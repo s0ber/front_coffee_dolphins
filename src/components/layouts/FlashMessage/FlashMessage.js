@@ -6,15 +6,18 @@ import classNames from 'classnames'
 
 export class FlashMessage extends Component {
   render() {
+    const message = this.props.message
     const flashMessageClasses = classNames('FlashMessage', {
-      'is-notice': this.props.notice,
-      'is-alert': this.props.alert
+      'is-notice': message.type == 'notice',
+      'is-alert': message.type == 'alert',
+      'is-warning': message.type == 'warning'
     })
+
     return (
       <div className={flashMessageClasses}>
         <div className='FlashMessage-inner'>
-          {this.props.notice || this.props.alert}
-          <span className='FlashMessage-close'>
+          {message.message}
+          <span className='FlashMessage-close' onClick={this.props.onClose}>
             <Icon fa='close' />
           </span>
         </div>

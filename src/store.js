@@ -6,9 +6,10 @@ import createLogger from 'redux-logger'
 import * as rootReducers from 'reducers'
 import {reducer as formReducer} from 'redux-form'
 import routingMiddleware from 'middleware/routing'
+import immutableStateWarnings from 'redux-immutable-state-invariant'
 
 const reducers = combineReducers(Object.assign({}, tinyReducer, rootReducers, {form: formReducer}))
-const middleware = [thunk, routingMiddleware, tinyMiddleware, createLogger()]
+const middleware = [immutableStateWarnings(), thunk, routingMiddleware, tinyMiddleware, createLogger()]
 const finalCreateStore = compose(
   applyMiddleware(...middleware),
   devTools()
