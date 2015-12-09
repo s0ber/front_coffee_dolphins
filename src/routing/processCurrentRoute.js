@@ -2,12 +2,13 @@ import {routes, paths} from 'routes'
 import get from 'utils/api/get'
 import loadUsers from 'action_creators/loadUsers'
 import loadCategories from 'action_creators/loadCategories'
+import loadPositions from 'action_creators/loadPositions'
 
 export default function(currentRoute, dispatch) {
   return new Promise((resolve, reject) => {
     switch (currentRoute) {
       case routes.POSITIONS:
-        resolve('positions')
+        dispatch(loadPositions()).then((res) => { resolve('positions') })
         break
       case routes.CATEGORIES:
         dispatch(loadCategories()).then((res) => { resolve('categories') })

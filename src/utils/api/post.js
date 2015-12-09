@@ -6,7 +6,12 @@ export default function(action, options = {}) {
   return new Promise((resolve, reject) => {
     request
       .post(API_ENDPOINT)
-      .send({post: action, query: options.data, pipe: options.pipe, authenticity_token: Cookie.get('_csrf_token')})
+      .send({
+        post: action,
+        query: JSON.stringify(options.data),
+        pipe: JSON.stringify(options.pipe),
+        authenticity_token: Cookie.get('_csrf_token')
+      })
       .withCredentials()
       .end((err, res) => {
         if (err) {

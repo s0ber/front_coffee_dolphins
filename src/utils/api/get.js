@@ -5,7 +5,11 @@ export default function(action, options = {}) {
   return new Promise((resolve, reject) => {
     request
       .get(API_ENDPOINT)
-      .query({get: action, query: options.query, pipe: options.pipe})
+      .query({
+        get: action,
+        query: JSON.stringify(options.query),
+        pipe: JSON.stringify(options.pipe)
+      })
       .withCredentials()
       .end((err, res) => {
         if (err) {
