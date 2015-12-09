@@ -5,7 +5,7 @@ export default class extends Component {
   render() {
     return (
       <Page>
-        <Page.Title text='Категории' />
+        <Page.Title text='Категории лендингов' />
         <Page.Body />
       </Page>
     )
