@@ -16,7 +16,7 @@ export function processRouteChange(router, currentUser, dispatch) {
     return dispatch(tinyActions.navigateTo(defaultPath))
   }
 
-  processCurrentRoute(currentRoute, dispatch).then((pageId) => {
+  processCurrentRoute(router, dispatch).then((pageId) => {
     dispatch(changePageId(pageId))
   })
 }

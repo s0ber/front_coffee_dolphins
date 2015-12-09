@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
+import {paths} from 'routes'
 
 import {PanelItem} from 'layouts/PanelItem'
 import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
+import {Link} from 'layouts/Link'
 import {Tag} from 'layouts/Tag'
+import {Chevron} from 'icons/Chevron'
 
 export default class extends Component {
   render() {
@@ -11,7 +14,12 @@ export default class extends Component {
 
     return (
       <PanelItem>
-        <PanelItem.Header title={position.title} />
+        <PanelItem.Header title={
+          <Link path={paths.POSITION_PATH({id: position.id})}>
+            {position.title}
+            <Chevron right />
+          </Link>
+        } />
         <PanelItem.Body>
           <List photoSrc={position.image_url}>
             <ListItem label='ID позиции'>{position.apishops_position_id}</ListItem>

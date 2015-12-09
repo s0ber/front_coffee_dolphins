@@ -5,6 +5,7 @@ const routes = {
   ROOT: '/',
   LOGIN: '/login',
   POSITIONS: '/positions',
+  POSITION: '/positions/:id',
   CATEGORIES: '/categories',
   LANDINGS: '/landings',
   USERS: '/users',
