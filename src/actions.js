@@ -13,5 +13,6 @@ export default keyMirror({
   CURRENT_USER_REQUESTED: null,
   CURRENT_USER_UPDATED: null,
 
-  UPDATE_USERS: null
+  UPDATE_USERS: null,
+  UPDATE_CATEGORIES: null
 })

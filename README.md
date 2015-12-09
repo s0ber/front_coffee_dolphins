@@ -42,13 +42,13 @@
 ### Users (Dec 3—6)
 - [x] authorization
 - [x] login form
-- [ ] show users list
+- [x] show users list
 - [ ] edit user
 - [ ] delete user
 - [ ] add new user
 
 ### Landing Categories (Dec 7—8)
-- [ ] show categories list
+- [x] show categories list
 - [ ] edit category
 - [ ] delete category
 - [ ] add new category
