@@ -59,7 +59,7 @@ export default class extends Component {
             <Layout.Content>
               <CurrentPage />
             </Layout.Content>
-            {isAuthorized &&
+            {isAuthorized && this.props.currentPageId &&
               <Layout.Sidebar>
                 <Menu selectedPageId={this.props.currentPageId} />
               </Layout.Sidebar>}
