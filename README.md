@@ -54,7 +54,7 @@
 - [ ] add new category
 
 ### Positions (initial stuff, Dec 9—10)
-- [ ] show positions list
+- [x] show positions list
 - [ ] edit position
 - [ ] delete position
 - [ ] add new position
@@ -62,7 +62,7 @@
 - [ ] show position
 
 ### Landings (initial stuff, Dec 11)
-- [ ] show landings list
+- [x] show landings list
 - [ ] delete landing
 
 ### Positions (advanced stuff, Dec 14—20)
