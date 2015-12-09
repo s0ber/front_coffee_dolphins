@@ -40,8 +40,8 @@
 - [ ] try using react test utils
 
 ### Users (Dec 3—6)
-- [ ] authorization
-- [ ] login form
+- [x] authorization
+- [x] login form
 - [ ] show users list
 - [ ] edit user
 - [ ] delete user
