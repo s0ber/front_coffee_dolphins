@@ -4,6 +4,7 @@ import currentUser from './currentUser'
 import users from './users'
 import categories from './categories'
 import positions from './positions'
+import landings from './landings'
 
 export {
   flashMessages,
@@ -11,5 +12,6 @@ export {
   currentUser,
   users,
   categories,
-  positions
+  positions,
+  landings
 }

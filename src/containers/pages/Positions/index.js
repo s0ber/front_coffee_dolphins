@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import PositionsList from './PositionsList'
 import {Text} from 'inline/Text'
 
-class Users extends Component {
+class Positions extends Component {
   render() {
     return (
       <Page>
@@ -22,4 +22,4 @@ export default connect((state) => {
   return {
     positions: state.positions
   }
-})(Users)
+})(Positions)
