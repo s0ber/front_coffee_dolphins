@@ -26,3 +26,13 @@ export class List extends Component {
     )
   }
 }
+
+List.Text = class extends Component {
+  render() {
+    return (
+      <div className='List-text'>
+        <p>{this.props.children}</p>
+      </div>
+    )
+  }
+}

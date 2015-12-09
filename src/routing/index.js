@@ -1,6 +1,7 @@
 import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
 import changePageId from 'action_creators/changePageId'
+import processCurrentRoute from './processCurrentRoute'
 
 export function processRouteChange(router, currentUser, dispatch) {
   const currentRoute = router.src
@@ -15,31 +16,7 @@ export function processRouteChange(router, currentUser, dispatch) {
     return dispatch(tinyActions.navigateTo(defaultPath))
   }
 
-  let pageId
-
-  switch (currentRoute) {
-    case routes.POSITIONS:
-      pageId = 'positions'
-      break
-    case routes.CATEGORIES:
-      pageId = 'categories'
-      break
-    case routes.LANDINGS:
-      pageId = 'landings'
-      break
-    case routes.USERS:
-      pageId = 'users'
-      break
-    case routes.EXAMPLES:
-    case routes.FILTERED_EXAMPLES:
-      pageId = 'examples'
-      break
-    case routes.LOGIN:
-      pageId = 'login'
-      break
-    default:
-      pageId = null
-  }
-
-  return dispatch(changePageId(pageId))
+  processCurrentRoute(currentRoute, dispatch).then((pageId) => {
+    dispatch(changePageId(pageId))
+  })
 }
