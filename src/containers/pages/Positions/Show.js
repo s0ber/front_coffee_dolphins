@@ -1,7 +1,14 @@
 import React, {Component} from 'react'
-import {Page} from 'layouts/Page'
 import {connect} from 'react-redux'
+import {paths} from 'routes'
+
+import {Page} from 'layouts/Page'
+import PositionDetails from './PositionDetails'
+import {Panel} from 'layouts/Panel'
+import {PanelItem} from 'layouts/PanelItem'
 import {Text} from 'inline/Text'
+import {Link} from 'layouts/Link'
+import {Chevron} from 'icons/Chevron'
 
 class ShowPosition extends Component {
   render() {
@@ -9,8 +16,20 @@ class ShowPosition extends Component {
 
     return (
       <Page>
-        <Page.Title text={'Позиция ' + position.id} />
+        <Page.Title text={
+          <span>
+            <Link forPageTitle path={paths.POSITIONS_PATH()}>Позиции</Link>
+            <Chevron right />
+            {position.title}
+          </span>
+        } />
         <Page.Body>
+          <Panel>
+            <PanelItem>
+              <PanelItem.Header title='Детали' />
+              <PositionDetails position={position} />
+            </PanelItem>
+          </Panel>
         </Page.Body>
       </Page>
     )

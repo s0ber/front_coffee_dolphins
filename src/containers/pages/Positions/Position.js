@@ -1,11 +1,9 @@
 import React, {Component} from 'react'
 import {paths} from 'routes'
 
+import PositionDetails from './PositionDetails'
 import {PanelItem} from 'layouts/PanelItem'
-import {List} from 'layouts/List'
-import {ListItem} from 'layouts/ListItem'
 import {Link} from 'layouts/Link'
-import {Tag} from 'layouts/Tag'
 import {Chevron} from 'icons/Chevron'
 
 export default class extends Component {
@@ -20,22 +18,7 @@ export default class extends Component {
             <Chevron right />
           </Link>
         } />
-        <PanelItem.Body>
-          <List photoSrc={position.image_url}>
-            <ListItem label='ID позиции'>{position.apishops_position_id}</ListItem>
-            <ListItem label='Категория'>{position.category}</ListItem>
-            <ListItem label='Цена'>{position.price}</ListItem>
-            <ListItem label='Прибыль'>{position.profit}</ListItem>
-            <ListItem label='Доступность'>{position.availability_level}</ListItem>
-            <ListItem label='Ключевые слова'>
-              <div className='Tags'>
-                {position.search_keywords.map((keyword, i) => {
-                  return <Tag key={i} label={keyword.name} value={keyword.search_count} />
-                })}
-              </div>
-            </ListItem>
-          </List>
-        </PanelItem.Body>
+        <PositionDetails position={position} />
       </PanelItem>
     )
   }
