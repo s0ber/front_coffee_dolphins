@@ -15,8 +15,8 @@ import {Menu} from 'layouts/Menu'
 import CurrentPage from './CurrentPage'
 import {Example as ExampleModal} from './modals/Example'
 
-import logoutUser from 'action_creators/logoutUser'
-import hideFlashMessage from 'action_creators/hideFlashMessage'
+import logoutUser from 'actions/logoutUser'
+import hideFlashMessage from 'actions/hideFlashMessage'
 
 const SHOW_MODAL = false
 

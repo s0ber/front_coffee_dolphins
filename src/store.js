@@ -9,7 +9,7 @@ import routingMiddleware from 'middleware/routing'
 import immutableStateWarnings from 'redux-immutable-state-invariant'
 
 const reducers = combineReducers(Object.assign({}, tinyReducer, rootReducers, {form: formReducer}))
-const middleware = [immutableStateWarnings(), thunk, routingMiddleware, tinyMiddleware, createLogger()]
+const middleware = [thunk, routingMiddleware, tinyMiddleware, createLogger()]
 const finalCreateStore = compose(
   applyMiddleware(...middleware),
   devTools()

@@ -11,7 +11,7 @@ export default keyMirror({
   LOGOUT_USER: null,
 
   CURRENT_USER_REQUESTED: null,
-  CURRENT_USER_UPDATED: null,
+  UPDATE_CURRENT_USER: null,
 
   UPDATE_USERS: null,
   UPDATE_CATEGORIES: null,

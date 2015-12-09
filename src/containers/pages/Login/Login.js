@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
-import loginUser from 'action_creators/loginUser'
+import loginUser from 'actions/loginUser'
 
 import {Panel} from 'layouts/Panel'
 import {Form} from 'forms/Form'
