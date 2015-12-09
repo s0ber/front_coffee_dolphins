@@ -4,7 +4,12 @@ import {connect} from 'react-redux'
 import CategoriesList from './CategoriesList'
 import {Text} from 'inline/Text'
 
-class Categories extends Component {
+@connect((state) => {
+  return {
+    categories: state.categories
+  }
+})
+export default class extends Component {
   render() {
     return (
       <Page>
@@ -17,9 +22,3 @@ class Categories extends Component {
     )
   }
 }
-
-export default connect((state) => {
-  return {
-    categories: state.categories
-  }
-})(Categories)

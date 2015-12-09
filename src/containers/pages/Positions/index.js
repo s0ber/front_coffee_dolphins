@@ -5,7 +5,13 @@ import {connect} from 'react-redux'
 import PositionsList from './PositionsList'
 import {Text} from 'inline/Text'
 
-class Positions extends Component {
+@connect((state) => {
+  return {
+    positions: state.positions.list,
+    currentPositionId: state.positions.currentPositionId
+  }
+})
+export default class extends Component {
   render() {
     if (this.props.currentPositionId) {
       return <Show />
@@ -23,9 +29,3 @@ class Positions extends Component {
   }
 }
 
-export default connect((state) => {
-  return {
-    positions: state.positions.list,
-    currentPositionId: state.positions.currentPositionId
-  }
-})(Positions)

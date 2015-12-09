@@ -10,7 +10,14 @@ import {Text} from 'inline/Text'
 import {Link} from 'layouts/Link'
 import {Chevron} from 'icons/Chevron'
 
-class ShowPosition extends Component {
+@connect((state) => {
+  return {
+    position: state.positions.list.find((position) => {
+      return position.id == state.positions.currentPositionId
+    })
+  }
+})
+export default class extends Component {
   render() {
     const position = this.props.position
 
@@ -35,11 +42,3 @@ class ShowPosition extends Component {
     )
   }
 }
-
-export default connect((state) => {
-  return {
-    position: state.positions.list.find((position) => {
-      return position.id == state.positions.currentPositionId
-    })
-  }
-})(ShowPosition)

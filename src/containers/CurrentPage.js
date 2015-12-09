@@ -11,7 +11,7 @@ import {PageLoader} from 'layouts/PageLoader'
     currentPageId: state.currentPageId
   }
 })
-class CurrentPage extends Component {
+export default class extends Component {
   render() {
     if (this.props.currentPageId) {
       const Page = Pages[toComponentName(this.props.currentPageId)]
@@ -21,5 +21,3 @@ class CurrentPage extends Component {
     }
   }
 }
-
-export default CurrentPage

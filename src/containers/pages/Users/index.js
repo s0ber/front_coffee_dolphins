@@ -4,7 +4,12 @@ import {connect} from 'react-redux'
 import UsersList from './UsersList'
 import {Text} from 'inline/Text'
 
-class Users extends Component {
+@connect((state) => {
+  return {
+    users: state.users
+  }
+})
+export default class extends Component {
   render() {
     return (
       <Page>
@@ -17,9 +22,3 @@ class Users extends Component {
     )
   }
 }
-
-export default connect((state) => {
-  return {
-    users: state.users
-  }
-})(Users)

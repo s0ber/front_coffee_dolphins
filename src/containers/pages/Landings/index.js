@@ -4,7 +4,12 @@ import {connect} from 'react-redux'
 import LandingsList from './LandingsList'
 import {Text} from 'inline/Text'
 
-class Landings extends Component {
+@connect((state) => {
+  return {
+    landings: state.landings
+  }
+})
+export default class extends Component {
   render() {
     return (
       <Page>
@@ -17,9 +22,3 @@ class Landings extends Component {
     )
   }
 }
-
-export default connect((state) => {
-  return {
-    landings: state.landings
-  }
-})(Landings)

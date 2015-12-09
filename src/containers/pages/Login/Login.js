@@ -11,7 +11,7 @@ import {SmallButton} from 'layouts/SmallButton'
 @reduxForm({
   form: 'login', fields: ['email', 'password', 'remember_me']
 })
-class Login extends Component {
+export default class extends Component {
   submit = (values) => {
     return this.props.dispatch(loginUser(values))
   }
@@ -38,5 +38,3 @@ class Login extends Component {
     )
   }
 }
-
-export default Login
