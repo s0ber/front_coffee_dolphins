@@ -5,19 +5,7 @@ export default function(state = [], action) {
     case UPDATE_POSITIONS:
       return action.payload
     case UPDATE_POSITION:
-      const positionIndex = state.findIndex((position) => {
-        return position.id == action.payload.id
-      })
-
-      if (positionIndex == -1) {
-        return [action.payload]
-      } else {
-        return [
-          ...state.slice(0, positionIndex),
-          action.payload,
-          ...state.slice(positionIndex + 1)
-        ]
-      }
+      return [action.payload]
     default:
       return state
   }
