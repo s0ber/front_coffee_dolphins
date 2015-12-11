@@ -7,7 +7,7 @@ export default class extends Component {
     return (
       <ReactCSSTransitionGroup transitionName='remove' transitionEnter={false} transitionLeaveTimeout={400}>
         {this.props.landings.map((landing, i) => {
-          return <Landing key={i} landing={landing} onLandingDestroy={this.props.onLandingDestroy} />
+          return <Landing key={'landing' + landing.id} landing={landing} onLandingDestroy={this.props.onLandingDestroy} />
         })}
       </ReactCSSTransitionGroup>
     )
