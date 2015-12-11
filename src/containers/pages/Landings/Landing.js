@@ -4,8 +4,13 @@ import {PanelItem} from 'layouts/PanelItem'
 import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
 import {Status} from 'inline/Status'
+import {SmallButton} from 'layouts/SmallButton'
 
 export default class extends Component {
+  onLandingDestroy = (e) => {
+    this.props.onLandingDestroy(this.props.landing)
+  }
+
   humanStatus(status) {
     return ({
       'draft': <Status>Черновик</Status>,
@@ -18,7 +23,9 @@ export default class extends Component {
 
     return (
       <PanelItem>
-        <PanelItem.Header title={landing.position.title} />
+        <PanelItem.Header title={landing.position.title}>
+          <SmallButton color='red' icon='close' onClick={this.onLandingDestroy} />
+        </PanelItem.Header>
         <PanelItem.Body>
           <List photoSrc={landing.position.image_url}>
             <ListItem label='Статус'>{this.humanStatus(landing._status)}</ListItem>
