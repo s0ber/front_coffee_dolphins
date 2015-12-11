@@ -17,6 +17,7 @@ export default keyMirror({
   UPDATE_CATEGORIES: null,
   UPDATE_POSITIONS: null,
   UPDATE_POSITION: null,
+  DESTROY_POSITION: null,
   CHANGE_CURRENT_POSITION_ID: null,
   UPDATE_LANDINGS: null
 })

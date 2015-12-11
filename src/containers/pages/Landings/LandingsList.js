@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
 import Landing from './Landing'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class extends Component {
   render() {
     return (
-      <div>
+      <ReactCSSTransitionGroup transitionName='remove' transitionEnter={false} transitionLeaveTimeout={400}>
         {this.props.landings.map((landing, i) => {
           return <Landing key={i} landing={landing} />
         })}
-      </div>
+      </ReactCSSTransitionGroup>
     )
   }
 }

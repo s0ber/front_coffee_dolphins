@@ -13,6 +13,13 @@
     .PanelItem-body
       border-radius: 0 0 5px 5px
 
+  &.remove-leave
+    opacity: 1
+
+  &.remove-leave.remove-leave-active
+    opacity: 0.01
+    transition: opacity 400ms ease-in
+
 .PanelItem-header
   +acts_as_panel_header
   display: flex
