@@ -7,8 +7,13 @@ export class FlashMessages extends Component {
   render() {
     return (
       <div className='FlashMessages'>
-        <FlashMessage notice='Тестовая зеленая нотификация.' />
-        <FlashMessage alert='Тестовая красная нотификация.' />
+        {this.props.messages.map((message, i) => {
+          return <FlashMessage key={i}
+                               message={message}
+                               onClose={() => {
+                                 this.props.dispatch(hideFlashMessage(message))
+                               }}/>
+        })}
       </div>
     )
   }

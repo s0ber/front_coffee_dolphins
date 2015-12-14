@@ -6,11 +6,18 @@
   table-layout: fixed;
   width: 100%;
 
-.List p.panel-text
-  margin: 25px 15px 15px
+.List-text
+  +clearfix
+  border-top: 1px solid $blue_medium
 
   &:first-child
-    margin-top: 15px
+    border-top: 0
+
+  p
+    margin: 25px 15px 15px
+
+    &:first-child
+      margin-top: 15px
 
 .List-inner
   display: table-row

@@ -7,7 +7,11 @@ export class Form extends Component {
     const formClasses = classNames('Form', {
       'for-modal': this.props.forModal
     })
-    return (<form className={formClasses} action='#'>{this.props.children}</form>)
+    return (
+      <form className={formClasses} onSubmit={this.props.onSubmit}>
+        {this.props.children}
+      </form>
+    )
   }
 }
 

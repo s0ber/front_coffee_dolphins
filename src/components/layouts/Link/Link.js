@@ -1,5 +1,7 @@
+import './Link.sass'
 import React, {Component} from 'react'
 import {tinyActions} from 'redux-tiny-router'
+import classNames from 'classnames'
 
 export class Link extends Component {
   navigateToPath = (e) => {
@@ -10,11 +12,15 @@ export class Link extends Component {
   static contextTypes = {store: React.PropTypes.any}
 
   render() {
+    const linkClasses = classNames('Link', {
+      'for-pageTitle': this.props.forPageTitle
+    })
+
     const {path, ...rest} = this.props
     const href = `${path}`
 
     return (
-      <a href={href} {...rest} onClick={this.navigateToPath}>
+      <a className={linkClasses} href={href} {...rest} onClick={this.navigateToPath}>
         {this.props.children}
       </a>
     )

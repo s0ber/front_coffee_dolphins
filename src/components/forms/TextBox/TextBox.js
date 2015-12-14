@@ -7,15 +7,16 @@ import classNames from 'classnames'
 
 export class TextBox extends Component {
   render() {
-    const hint = this.props.hint && <Hint {...this.props} />
-    const {children, ...other} = this.props
+    const {children, required, ...other} = this.props
     const textBoxClasses = classNames('TextBox', {'is-listValue': this.props.isListValue})
 
     return (
       <div className={textBoxClasses}>
-        {this.props.label && <Label {...other} />}
-        <input type='text' value={this.props.value} />
-        {hint}
+        {this.props.label && <Label required={this.props.required} {...other} />}
+        {this.props.password ? <input type='password' {...other} /> :
+                               <input type='text' {...other} />}
+
+        {this.props.hint && <Hint text={this.props.hint} />}
         {this.props.children}
       </div>
     )

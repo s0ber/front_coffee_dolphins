@@ -16,11 +16,20 @@ export class SmallButton extends Component {
     const text = this.props.icon ? <i className={classNames('fa', 'fa-' + this.props.icon)} />
                                  : this.props.children || this.props.title
 
-    return (
-      <div className={buttonClasses} onClick={this.props.onClick}>
-        <div className='SmallButton-wrap'>{text}</div>
-        {this.props.isLoading && <ButtonLoader />}
-      </div>
-    )
+    if (this.props.submit) {
+      return (
+        <button type='submit' className={buttonClasses} onClick={this.props.onClick}>
+          <span className='SmallButton-wrap'>{text}</span>
+          {this.props.isLoading && <ButtonLoader />}
+        </button>
+      )
+    } else {
+      return (
+        <div className={buttonClasses} onClick={this.props.onClick}>
+          <span className='SmallButton-wrap'>{text}</span>
+          {this.props.isLoading && <ButtonLoader />}
+        </div>
+      )
+    }
   }
 }
