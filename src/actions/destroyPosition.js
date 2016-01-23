@@ -1,14 +1,18 @@
 import {DESTROY_POSITION} from 'actions'
-import post from 'utils/api/post'
+import destroy from 'utils/destroy'
+import showFlashMessage from 'actions/showFlashMessage'
 
 export default function(positionId) {
   return (dispatch) => {
-    post('positions#destroy', {data: {id: positionId}}).then((res) => {
-      if (!res.positions_destroy.status) {
+    destroy(`/positions/${positionId}`).then((res) => {
+      if (res.success) {
         dispatch({
           type: DESTROY_POSITION,
-          payload: res.positions_destroy.body.id
+          payload: positionId
         })
+        if (res.notice) {
+          dispatch(showFlashMessage(res.notice))
+        }
       }
     })
   }

@@ -1,17 +1,17 @@
 import {DESTROY_CATEGORY} from 'actions'
-import post from 'utils/api/post'
+import destroy from 'utils/destroy'
 import showFlashMessage from 'actions/showFlashMessage'
 
 export default function(categoryId) {
   return (dispatch) => {
-    post('categories#destroy', {data: {id: categoryId}}).then((res) => {
-      if (!res.categories_destroy.status) {
+    destroy(`/categories/${categoryId}`).then((res) => {
+      if (res.success) {
         dispatch({
           type: DESTROY_CATEGORY,
-          payload: res.categories_destroy.body.id
+          payload: categoryId
         })
-        if (res.categories_destroy.message) {
-          dispatch(showFlashMessage(res.categories_destroy.message))
+        if (res.notice) {
+          dispatch(showFlashMessage(res.notice))
         }
       }
     })

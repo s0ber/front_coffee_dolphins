@@ -1,4 +1,5 @@
-import post from 'utils/api/post'
+import post from 'utils/post'
+
 import {LOGIN_USER} from 'actions'
 import {tinyActions} from 'redux-tiny-router'
 import {paths} from 'routes'
@@ -6,17 +7,15 @@ import showFlashMessage from './showFlashMessage'
 
 export default function(loginData) {
   return (dispatch) => {
-    return post('current_user#login', {data: loginData}).then((res) => {
-      if (res.current_user_login.body) {
-        res = res.current_user_login
-
+    return post('/sessions', {user: loginData}).then((res) => {
+      if (res.success) {
         dispatch({
           type: LOGIN_USER,
-          payload: res.body
+          payload: res.user.user
         })
 
-        if (res.message) {
-          dispatch(showFlashMessage(res.message))
+        if (res.meta.notice) {
+          dispatch(showFlashMessage(res.meta.notice))
         }
 
         dispatch(tinyActions.navigateTo(paths.POSITIONS_PATH()))
