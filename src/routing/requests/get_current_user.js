@@ -1,9 +1,9 @@
-import get from 'utils/api/get'
+import get from 'utils/get'
 
 export default function() {
-  return get('current_user#show').then((res) => {
-    if (res.current_user_show) {
-      return res.current_user_show.body
+  return get('/current_user').then((res) => {
+    if (res.user) {
+      return res.user
     }
   })
 }

@@ -1,11 +1,11 @@
-import get from 'utils/api/get'
+import get from 'utils/get'
 
 export default function() {
-  return get('positions#list', {query: {included: 'search_keywords'}}).then((res) => {
-    if (!res.positions_list.status) {
+  return get('/positions').then((res) => {
+    if (res.positions) {
       return {
         pageId: 'positions',
-        positions: res.positions_list.body,
+        positions: res.positions,
         currentPositionId: null
       }
     }

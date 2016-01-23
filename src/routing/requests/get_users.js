@@ -1,11 +1,11 @@
-import get from 'utils/api/get'
+import get from 'utils/get'
 
 export default function() {
-  return get('users#show').then((res) => {
-    if (!res.users_show.status) {
+  return get('/users').then((res) => {
+    if (res.users) {
       return {
         pageId: 'users',
-        users: res.users_show.body
+        users: res.users
       }
     }
   })

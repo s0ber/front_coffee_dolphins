@@ -1,4 +1,4 @@
-import {API_ENDPOINT} from 'constants/api_enpoint'
+import {API_ENDPOINT} from 'constants/enpoints'
 import request from 'superagent'
 import Cookie from 'cookies-js'
 

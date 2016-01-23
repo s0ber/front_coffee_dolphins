@@ -1,11 +1,11 @@
-import get from 'utils/api/get'
+import get from 'utils/get'
 
 export default function() {
-  return get('landings#show', {query: {included: ['position', 'category']}}).then((res) => {
-    if (!res.landings_show.status) {
+  return get('/landings').then((res) => {
+    if (res.landings) {
       return {
         pageId: 'landings',
-        landings: res.landings_show.body
+        landings: res.landings
       }
     }
   })

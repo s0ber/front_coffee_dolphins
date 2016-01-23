@@ -1,11 +1,11 @@
-import get from 'utils/api/get'
+import get from 'utils/get'
 
 export default function() {
-  return get('categories#show').then((res) => {
-    if (!res.categories_show.status) {
+  return get('/categories').then((res) => {
+    if (res.categories) {
       return {
         pageId: 'categories',
-        categories: res.categories_show.body
+        categories: res.categories
       }
     }
   })
