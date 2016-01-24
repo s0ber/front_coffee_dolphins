@@ -25,14 +25,14 @@ export default class extends Component {
           <Filters.Item title='Избранное' path={paths.FILTERED_EXAMPLES_PATH({filter: 'favorite'})} />
         </Filters>
         <Page.Body>
-          <Pagination />
+          <Pagination pagination={{currentPage: 5, totalPages: 15, nextPage: 6, prevPage: 4}} pagePathFn={(query = {page: 1}) => { return `/?page=${query.page}` }}/>
           <div>
             <PanelWithForm />
             <PanelWithList />
             <PanelWithDraggableItems />
             <PanelWithPanelItems />
           </div>
-          <Pagination />
+          <Pagination pagination={{currentPage: 5, totalPages: 15, nextPage: 6, prevPage: 4}} pagePathFn={(query = {page: 1}) => { return `/?page=${query.page}` }}/>
         </Page.Body>
       </Page>
     )
