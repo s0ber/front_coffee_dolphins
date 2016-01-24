@@ -9,6 +9,7 @@ import {Pagination} from 'layouts/Pagination'
 })
 export default class extends Component {
   render() {
-    return (this.props.pagination ? <Pagination pagination={this.props.pagination} /> : null)
+    const {pagination, pagePathFn} = this.props
+    return (pagination ? <Pagination {...{pagination, pagePathFn}} /> : null)
   }
 }

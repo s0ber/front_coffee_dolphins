@@ -1,7 +1,7 @@
 import get from 'utils/get'
 
-export default function() {
-  return get('/positions').then((res) => {
+export default function(query = {}) {
+  return get('/positions', query).then((res) => {
     if (res.positions) {
       return {
         pageId: 'positions',
