@@ -12,7 +12,7 @@ export default function(router) {
 
     switch (router.src) {
       case routes.POSITIONS:
-        request = getPositions()
+        request = getPositions(router.query)
         break
       case routes.POSITION:
         request = getPosition(router.params.id)
