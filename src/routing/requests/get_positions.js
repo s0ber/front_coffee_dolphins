@@ -6,7 +6,8 @@ export default function() {
       return {
         pageId: 'positions',
         positions: res.positions,
-        currentPositionId: null
+        currentPositionId: null,
+        pagination: res.meta ? res.meta.pagination : null
       }
     }
   })

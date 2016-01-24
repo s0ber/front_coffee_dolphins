@@ -21,5 +21,8 @@ export default keyMirror({
   DESTROY_POSITION: null,
   CHANGE_CURRENT_POSITION_ID: null,
   UPDATE_LANDINGS: null,
-  DESTROY_LANDING: null
+  DESTROY_LANDING: null,
+
+  UPDATE_PAGINATION: null,
+  RESET_PAGINATION: null
 })

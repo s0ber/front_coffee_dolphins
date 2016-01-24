@@ -6,6 +6,9 @@ import updateCategories from 'actions/updateCategories'
 import updatePositions from 'actions/updatePositions'
 import updatePosition from 'actions/updatePosition'
 
+import updatePagination from 'actions/updatePagination'
+import resetPagination from 'actions/resetPagination'
+
 import changeCurrentPosition from 'actions/changeCurrentPosition'
 import updateLandings from 'actions/updateLandings'
 
@@ -33,6 +36,12 @@ export default function(router, data, dispatch) {
       break
     case routes.LOGIN:
       break
+  }
+
+  if (data.pagination) {
+    dispatch(updatePagination(data.pagination))
+  } else {
+    dispatch(resetPagination())
   }
 
   dispatch(changePageId(data.pageId))
