@@ -9,6 +9,7 @@ import destroyPosition from 'actions/destroyPosition'
 @connect((state) => {
   return {
     positions: state.positions.list,
+    currentPageNum: state.pagination ? state.pagination.currentPage : null,
     currentPositionId: state.positions.currentPositionId
   }
 })
@@ -27,7 +28,10 @@ export default class extends Component {
         <Page>
           <Page.Title text='Позиции' />
           <Page.Body>
-            {this.props.positions.length ? <PositionsList positions={this.props.positions} onPositionDestroy={this.destroyPosition} /> :
+            {this.props.positions.length ? <PositionsList
+                                             positions={this.props.positions}
+                                             onPositionDestroy={this.destroyPosition}
+                                             currentPageNum={this.props.currentPageNum} /> :
                                            <Text>Нет позиций.</Text>}
           </Page.Body>
         </Page>
