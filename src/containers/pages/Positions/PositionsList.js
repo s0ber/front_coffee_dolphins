@@ -10,6 +10,7 @@ export default class extends Component {
       <div>
         <Pagination pagePathFn={paths.POSITIONS_PATH} />
         <ReactCSSTransitionGroup
+          key={this.props.currentPageNum}
           transitionName='remove'
           transitionEnter={false}
           transitionLeaveTimeout={400}>
