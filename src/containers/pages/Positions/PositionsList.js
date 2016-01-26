@@ -15,7 +15,14 @@ export default class extends Component {
           transitionEnter={false}
           transitionLeaveTimeout={400}>
           {this.props.positions.map((position, i) => {
-            return <Position key={'position' + position.id} position={position} handleDestroy={this.props.handleDestroy} />
+            return (
+              <Position
+                key={'position' + position.id}
+                position={position}
+                handleEdit={this.props.handleEdit}
+                handleCancelEdit={this.props.handleCancelEdit}
+                handleDestroy={this.props.handleDestroy} />
+            )
           })}
         </ReactCSSTransitionGroup>
         <Pagination pagePathFn={paths.POSITIONS_PATH} />

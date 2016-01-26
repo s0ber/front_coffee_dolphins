@@ -7,7 +7,14 @@ export default class extends Component {
     return (
       <ReactCSSTransitionGroup transitionName='remove' transitionEnter={false} transitionLeaveTimeout={400}>
         {this.props.users.map((user, i) => {
-          return <User key={i} user={user} handleDestroy={this.props.handleDestroy} />
+          return (
+            <User
+              key={i}
+              user={user}
+              handleEdit={this.props.handleEdit}
+              handleCancelEdit={this.props.handleCancelEdit}
+              handleDestroy={this.props.handleDestroy} />
+          )
         })}
       </ReactCSSTransitionGroup>
     )

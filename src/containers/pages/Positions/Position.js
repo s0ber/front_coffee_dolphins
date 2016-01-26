@@ -7,7 +7,17 @@ import {Link} from 'layouts/Link'
 import {Chevron} from 'icons/Chevron'
 import {SmallButton} from 'layouts/SmallButton'
 
+import PositionForm from './PositionForm'
+
 export default class extends Component {
+  handleEdit = (e) => {
+    this.props.handleEdit(this.props.position)
+  }
+
+  handleCancelEdit = (e) => {
+    this.props.handleCancelEdit(this.props.position)
+  }
+
   handleDestroy = (e) => {
     this.props.handleDestroy(this.props.position)
   }
@@ -23,9 +33,14 @@ export default class extends Component {
             <Chevron right />
           </Link>
         }>
+          <SmallButton icon='pencil' onClick={this.handleEdit} disabled={position._edited} />
           <SmallButton color='red' icon='close' onClick={this.handleDestroy} />
         </PanelItem.Header>
-        <PositionDetails position={position} />
+        <PanelItem.Body>
+          { position._edited ?
+            <PositionForm position={position} handleCancelEdit={this.handleCancelEdit} /> :
+            <PositionDetails position={position} /> }
+        </PanelItem.Body>
       </PanelItem>
     )
   }
