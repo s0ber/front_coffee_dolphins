@@ -26,15 +26,15 @@ export class Pagination extends Component {
           isInsideRightOffset = page > currentPage && page <= (currentPage + PAGES_OFFSET)
 
           if (page == currentPage) {
-            return <span className='Pagination-page is-current'>{page}</span>
+            return <span key={page} className='Pagination-page is-current'>{page}</span>
           } else if (page == 1 && !isInsideLeftOffset) {
-            return <span className='Pagination-first'><Link path={this.pagePath(page)}>&larr; Первая</Link></span>
+            return <span key={page} className='Pagination-first'><Link path={this.pagePath(page)}>&larr; Первая</Link></span>
           } else if (page == totalPages && !isInsideRightOffset) {
-            return <span className='Pagination-last'><Link path={this.pagePath(page)}>Последняя &rarr;</Link></span>
+            return <span key={page} className='Pagination-last'><Link path={this.pagePath(page)}>Последняя &rarr;</Link></span>
           } else if (isInsideLeftOffset || isInsideRightOffset) {
-            return <span className='Pagination-page'><Link path={this.pagePath(page)}>{page}</Link></span>
+            return <span key={page} className='Pagination-page'><Link path={this.pagePath(page)}>{page}</Link></span>
           } else if (page == (currentPage - PAGES_OFFSET - 1) || page == (currentPage + PAGES_OFFSET + 1)) {
-            return <span className='Pagination-gap'>...</span>
+            return <span key={page} className='Pagination-gap'>...</span>
           }
         })}
 
