@@ -1,8 +1,8 @@
-import {UPDATE_CATEGORIES, DESTROY_CATEGORY} from 'actions'
+import {SET_CATEGORIES, DESTROY_CATEGORY} from 'actions'
 
 export default function(state = [], action) {
   switch (action.type) {
-    case(UPDATE_CATEGORIES):
+    case(SET_CATEGORIES):
       return action.payload
     case DESTROY_CATEGORY:
       const categoryIndex = state.findIndex((category) => category.id == action.payload)

@@ -15,7 +15,7 @@ export default keyMirror({
 
   SET_USERS: null,
   DESTROY_USER: null,
-  UPDATE_CATEGORIES: null,
+  SET_CATEGORIES: null,
   DESTROY_CATEGORY: null,
   SET_POSITIONS: null,
   SET_POSITION: null,
@@ -23,7 +23,7 @@ export default keyMirror({
   EDIT_POSITION: null,
   CANCEL_EDIT_POSITION: null,
   CHANGE_CURRENT_POSITION_ID: null,
-  UPDATE_LANDINGS: null,
+  SET_LANDINGS: null,
   DESTROY_LANDING: null,
 
   UPDATE_PAGINATION: null,

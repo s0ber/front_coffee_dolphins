@@ -1,8 +1,8 @@
-import {UPDATE_CATEGORIES} from 'actions'
+import {SET_CATEGORIES} from 'actions'
 
 export default function(categories) {
   return {
-    type: UPDATE_CATEGORIES,
+    type: SET_CATEGORIES,
     payload: categories
   }
 }

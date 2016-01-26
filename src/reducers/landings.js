@@ -1,8 +1,8 @@
-import {UPDATE_LANDINGS, DESTROY_LANDING} from 'actions'
+import {SET_LANDINGS, DESTROY_LANDING} from 'actions'
 
 export default function(state = [], action) {
   switch (action.type) {
-    case UPDATE_LANDINGS:
+    case SET_LANDINGS:
       return action.payload
     case DESTROY_LANDING:
       const landingIndex = state.findIndex((landing) => landing.id == action.payload)
