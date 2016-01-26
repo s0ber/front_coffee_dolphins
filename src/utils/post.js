@@ -1,8 +1,9 @@
 import {ENDPOINT} from 'constants/enpoints'
 import request from 'superagent'
 import Cookie from 'cookies-js'
+import showFlashMessage from 'actions/showFlashMessage'
 
-export default function(path, data = {}) {
+export default function(path, data = {}, dispatch) {
   data = Object.assign({}, data, {authenticity_token: Cookie.get('_csrf_token')})
 
   return new Promise((resolve, reject) => {
@@ -12,9 +13,19 @@ export default function(path, data = {}) {
       .withCredentials()
       .end((err, res) => {
         if (err) {
-          reject(err)
+          if (res.status == 422) {
+            reject(res.body.errors, err)
+          } else {
+            reject(res.body, err)
+          }
         } else {
-          resolve(res.body)
+          const response = res.body
+          resolve(response)
+
+          const notice = (response.meta && response.meta.notice) || response.notice
+          if (dispatch && notice) {
+            dispatch(showFlashMessage(notice))
+          }
         }
       })
   })

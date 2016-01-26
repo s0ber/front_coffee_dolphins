@@ -4,15 +4,12 @@ import showFlashMessage from 'actions/showFlashMessage'
 
 export default function(positionId) {
   return (dispatch) => {
-    destroy(`/positions/${positionId}`).then((res) => {
+    destroy(`/positions/${positionId}`, dispatch).then((res) => {
       if (res.success) {
         dispatch({
           type: DESTROY_POSITION,
           payload: positionId
         })
-        if (res.notice) {
-          dispatch(showFlashMessage(res.notice))
-        }
       }
     })
   }

@@ -7,7 +7,7 @@ import classNames from 'classnames'
 export class Label extends Component {
   render() {
     const Abbr = this.props.required && <abbr title='require'>*</abbr>
-    const Error = this.props.error && <InlineError text={this.props.error} />
+    const Error = this.props.touched && this.props.error && <InlineError text={this.props.error} />
     const labelClassNames = classNames('Label', this.props.modifierClass, {'is-required': this.props.required})
 
     return (

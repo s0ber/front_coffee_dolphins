@@ -1,8 +1,9 @@
 import {ENDPOINT} from 'constants/enpoints'
 import request from 'superagent'
 import Cookie from 'cookies-js'
+import showFlashMessage from 'actions/showFlashMessage'
 
-export default function(path) {
+export default function(path, dispatch) {
   return new Promise((resolve, reject) => {
     request
       .del(ENDPOINT + path)
@@ -12,7 +13,13 @@ export default function(path) {
         if (err) {
           reject(err)
         } else {
-          resolve(res.body)
+          const response = res.body
+          resolve(response)
+
+          const notice = (response.meta && response.meta.notice) || response.notice
+          if (dispatch && notice) {
+            dispatch(showFlashMessage(notice))
+          }
         }
       })
   })
