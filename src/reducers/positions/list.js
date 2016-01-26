@@ -1,10 +1,14 @@
-import {UPDATE_POSITIONS, UPDATE_POSITION, DESTROY_POSITION} from 'actions'
+import {SET_POSITIONS, SET_POSITION, DESTROY_POSITION} from 'actions'
+
+function findPosition(state, positionId) {
+  const index = state.findIndex((position) => position.id == action.payload)
+}
 
 export default function(state = [], action) {
   switch (action.type) {
-    case UPDATE_POSITIONS:
+    case SET_POSITIONS:
       return action.payload
-    case UPDATE_POSITION:
+    case SET_POSITION:
       return [action.payload]
     case DESTROY_POSITION:
       const positionIndex = state.findIndex((position) => position.id == action.payload)

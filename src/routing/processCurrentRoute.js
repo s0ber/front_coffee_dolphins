@@ -3,7 +3,7 @@ import {routes, paths} from 'routes'
 import changePageId from 'actions/changePageId'
 import updateUsers from 'actions/updateUsers'
 import updateCategories from 'actions/updateCategories'
-import updatePositions from 'actions/updatePositions'
+import setPositions from 'actions/setPositions'
 import updatePosition from 'actions/updatePosition'
 
 import updatePagination from 'actions/updatePagination'
@@ -15,7 +15,7 @@ import updateLandings from 'actions/updateLandings'
 export default function(router, data, dispatch) {
   switch (router.src) {
     case routes.POSITIONS:
-      dispatch(updatePositions(data.positions))
+      dispatch(setPositions(data.positions))
       dispatch(changeCurrentPosition(data.currentPositionId))
       break
     case routes.POSITION:

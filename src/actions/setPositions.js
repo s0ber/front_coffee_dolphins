@@ -1,8 +1,8 @@
-import {UPDATE_POSITIONS} from 'actions'
+import {SET_POSITIONS} from 'actions'
 
 export default function(positions) {
   return {
-    type: UPDATE_POSITIONS,
+    type: SET_POSITIONS,
     payload: positions
   }
 }
