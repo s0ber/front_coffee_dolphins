@@ -9,7 +9,7 @@ export class SelectBox extends Component {
     return (
       <div className='SelectBox'>
         <Label {...this.props} />
-        <select {...this.props}>
+        <select {...this.props} value={this.props.value || ''}>
           {this.props.collection.map((item, i) => <option key={i} value={item.value}>{item.text}</option>)}
         </select>
         {this.props.hint && <Hint text={this.props.hint} />}

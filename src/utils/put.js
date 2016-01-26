@@ -8,7 +8,7 @@ export default function(path, data = {}, dispatch) {
 
   return new Promise((resolve, reject) => {
     request
-      .post(ENDPOINT + path)
+      .put(ENDPOINT + path)
       .send(data)
       .withCredentials()
       .end((err, res) => {

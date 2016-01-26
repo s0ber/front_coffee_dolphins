@@ -4,6 +4,9 @@ import {Page} from 'layouts/Page'
 import {connect} from 'react-redux'
 import PositionsList from './PositionsList'
 import {Text} from 'inline/Text'
+
+import editPosition from 'actions/editPosition'
+import cancelEditPosition from 'actions/cancelEditPosition'
 import destroyPosition from 'actions/destroyPosition'
 
 @connect((state) => {
@@ -14,7 +17,15 @@ import destroyPosition from 'actions/destroyPosition'
   }
 })
 export default class extends Component {
-  destroyPosition = (position) => {
+  edit = (position) => {
+    this.props.dispatch(editPosition(position))
+  }
+
+  cancelEdit = (position) => {
+    this.props.dispatch(cancelEditPosition(position))
+  }
+
+  destroy = (position) => {
     if (confirm(`Удалить позицию ${position.title}?`)) {
       this.props.dispatch(destroyPosition(position.id))
     }
@@ -30,7 +41,9 @@ export default class extends Component {
           <Page.Body>
             {this.props.positions.length ? <PositionsList
                                              positions={this.props.positions}
-                                             onPositionDestroy={this.destroyPosition}
+                                             handleEdit={this.edit}
+                                             handleCancelEdit={this.cancelEdit}
+                                             handleDestroy={this.destroy}
                                              currentPageNum={this.props.currentPageNum} /> :
                                            <Text>Нет позиций.</Text>}
           </Page.Body>

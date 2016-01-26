@@ -34,7 +34,9 @@ export default class extends Component {
           <Panel>
             <PanelItem>
               <PanelItem.Header title='Детали' />
-              <PositionDetails position={position} />
+              <PanelItem.Body>
+                <PositionDetails position={position} />
+              </PanelItem.Body>
             </PanelItem>
           </Panel>
         </Page.Body>

@@ -1,20 +1,13 @@
-import {UPDATE_LANDINGS, DESTROY_LANDING} from 'actions'
+import {SET_LANDINGS, DESTROY_LANDING} from 'actions'
+import removeItemFromList from 'helpers/removeItemFromList'
 
 export default function(state = [], action) {
   switch (action.type) {
-    case UPDATE_LANDINGS:
+    case SET_LANDINGS:
       return action.payload
     case DESTROY_LANDING:
-      const landingIndex = state.findIndex((landing) => landing.id == action.payload)
-
-      if (landingIndex !== -1) {
-        return [
-          ...state.slice(0, landingIndex),
-          ...state.slice(landingIndex + 1)
-        ]
-      } else {
-        return state
-      }
+      const landingId = action.payload
+      return removeItemFromList(state, landingId)
     default:
       return state
   }

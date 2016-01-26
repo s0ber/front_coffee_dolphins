@@ -2,7 +2,7 @@ import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
 
 import getCurrentUser from './requests/get_current_user'
-import updateCurrentUser from 'actions/updateCurrentUser'
+import setCurrentUser from 'actions/setCurrentUser'
 
 import fetchDataForRoute from './fetchDataForRoute'
 import processCurrentRoute from './processCurrentRoute'
@@ -13,7 +13,7 @@ function loadUser(state, dispatch) {
       resolve()
     } else {
       getCurrentUser().then((currentUser) => {
-        dispatch(updateCurrentUser(currentUser))
+        dispatch(setCurrentUser(currentUser))
         resolve()
       })
     }

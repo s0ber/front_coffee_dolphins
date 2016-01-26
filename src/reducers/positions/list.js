@@ -1,22 +1,22 @@
-import {UPDATE_POSITIONS, UPDATE_POSITION, DESTROY_POSITION} from 'actions'
+import {SET_POSITIONS, SET_POSITION, EDIT_POSITION, CANCEL_EDIT_POSITION, UPDATE_POSITION, DESTROY_POSITION} from 'actions'
+import updateItemInList from 'helpers/updateItemInList'
+import removeItemFromList from 'helpers/removeItemFromList'
 
 export default function(state = [], action) {
   switch (action.type) {
-    case UPDATE_POSITIONS:
+    case SET_POSITIONS:
       return action.payload
-    case UPDATE_POSITION:
+    case SET_POSITION:
       return [action.payload]
+    case EDIT_POSITION:
+      return updateItemInList(state, action.payload, {_edited: true})
+    case CANCEL_EDIT_POSITION:
+      return updateItemInList(state, action.payload, {_edited: false})
+    case UPDATE_POSITION:
+      return updateItemInList(state, action.payload)
     case DESTROY_POSITION:
-      const positionIndex = state.findIndex((position) => position.id == action.payload)
-
-      if (positionIndex !== -1) {
-        return [
-          ...state.slice(0, positionIndex),
-          ...state.slice(positionIndex + 1)
-        ]
-      } else {
-        return state
-      }
+      const positionId = action.payload
+      return removeItemFromList(state, positionId)
     default:
       return state
   }

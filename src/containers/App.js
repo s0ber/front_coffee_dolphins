@@ -31,7 +31,7 @@ export default class extends Component {
 
     return (
       <Layout >
-        {(this.props.flashMessages.length > 0) && <FlashMessages messages={this.props.flashMessages} />}
+        {(this.props.flashMessages.length > 0) && <FlashMessages messages={this.props.flashMessages} dispatch={this.props.dispatch} />}
         <Layout.Main>
           <Layout.Header>
             <Header isAuthorized={isAuthorized}

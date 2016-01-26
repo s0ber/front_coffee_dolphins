@@ -7,8 +7,8 @@ import {Status} from 'inline/Status'
 import {SmallButton} from 'layouts/SmallButton'
 
 export default class extends Component {
-  onLandingDestroy = (e) => {
-    this.props.onLandingDestroy(this.props.landing)
+  handleDestroy = (e) => {
+    this.props.handleDestroy(this.props.landing)
   }
 
   humanStatus(status) {
@@ -24,7 +24,7 @@ export default class extends Component {
     return (
       <PanelItem>
         <PanelItem.Header title={landing.position.title}>
-          <SmallButton color='red' icon='close' onClick={this.onLandingDestroy} />
+          <SmallButton color='red' icon='close' onClick={this.handleDestroy} />
         </PanelItem.Header>
         <PanelItem.Body>
           <List photoSrc={landing.position.image_url}>

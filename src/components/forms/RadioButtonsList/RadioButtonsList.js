@@ -7,12 +7,14 @@ import {Hint} from '../Hint'
 
 export class RadioButtonsList extends Component {
   render() {
+    const {required, collection, ...other} = this.props
+
     return (
       <div className='RadioButtonsList'>
-        <Label {...this.props} />
-        {this.props.collection.map((item, i) =>
+        <Label required={required} {...other} />
+        {collection.map((item, i) =>
           <InlineLabel key={i} label={item.text} >
-            <input type='radio' {...this.props} />
+            <input type='radio' {...other} value={item.value} checked={this.props.value == item.value} />
           </InlineLabel>
         )}
         {this.props.hint && <Hint text={this.props.hint} />}

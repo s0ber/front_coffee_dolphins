@@ -1,8 +1,8 @@
-import {UPDATE_USERS} from 'actions'
+import {SET_USERS} from 'actions'
 
 export default function(users) {
   return {
-    type: UPDATE_USERS,
+    type: SET_USERS,
     payload: users
   }
 }

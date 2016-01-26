@@ -4,15 +4,12 @@ import showFlashMessage from 'actions/showFlashMessage'
 
 export default function(landingId) {
   return (dispatch) => {
-    destroy(`/landings/${landingId}`).then((res) => {
+    destroy(`/landings/${landingId}`, dispatch).then((res) => {
       if (res.success) {
         dispatch({
           type: DESTROY_LANDING,
           payload: landingId
         })
-        if (res.notice) {
-          dispatch(showFlashMessage(res.notice))
-        }
       }
     })
   }

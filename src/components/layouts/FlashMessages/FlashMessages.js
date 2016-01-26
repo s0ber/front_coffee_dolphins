@@ -2,6 +2,7 @@ import './FlashMessages.sass'
 
 import React, {Component} from 'react'
 import {FlashMessage} from '../FlashMessage'
+import hideFlashMessage from 'actions/hideFlashMessage'
 
 export class FlashMessages extends Component {
   render() {

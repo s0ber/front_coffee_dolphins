@@ -1,8 +1,8 @@
-import {UPDATE_LANDINGS} from 'actions'
+import {SET_LANDINGS} from 'actions'
 
 export default function(landings) {
   return {
-    type: UPDATE_LANDINGS,
+    type: SET_LANDINGS,
     payload: landings
   }
 }

@@ -7,19 +7,16 @@ import showFlashMessage from './showFlashMessage'
 
 export default function(loginData) {
   return (dispatch) => {
-    return post('/sessions', {user: loginData}).then((res) => {
-      if (res.success) {
-        dispatch({
-          type: LOGIN_USER,
-          payload: res.user.user
-        })
+    return post('/sessions', {user: loginData}, dispatch)
+      .then((res) => {
+        if (res.success) {
+          dispatch({
+            type: LOGIN_USER,
+            payload: res.user.user
+          })
 
-        if (res.meta.notice) {
-          dispatch(showFlashMessage(res.meta.notice))
+          dispatch(tinyActions.navigateTo(paths.POSITIONS_PATH()))
         }
-
-        dispatch(tinyActions.navigateTo(paths.POSITIONS_PATH()))
-      }
-    })
+      })
   }
 }

@@ -43,27 +43,27 @@
 - [x] authorization
 - [x] login form
 - [x] show users list
-- [ ] edit user
-- [ ] delete user
+- [x] edit user
+- [x] delete user
 - [ ] add new user
 
 ### Landing Categories (Dec 7—8)
 - [x] show categories list
-- [ ] edit category
-- [ ] delete category
+- [x] edit category
+- [x] delete category
 - [ ] add new category
 
 ### Positions (initial stuff, Dec 9—10)
 - [x] show positions list
 - [ ] edit position
-- [ ] delete position
+- [x] delete position
 - [ ] add new position
 - [ ] paginate positions
 - [ ] show position
 
 ### Landings (initial stuff, Dec 11)
 - [x] show landings list
-- [ ] delete landing
+- [x] delete landing
 
 ### Positions (advanced stuff, Dec 14—20)
 - [ ] like positions
