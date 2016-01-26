@@ -19,7 +19,7 @@ export class SmallButton extends Component {
 
     if (this.props.submit) {
       return (
-        <button type='submit' className={buttonClasses} onClick={isEnabled && this.props.onClick}>
+        <button type='submit' disabled={this.props.isLoading} className={buttonClasses} onClick={isEnabled && this.props.onClick}>
           <span className='SmallButton-wrap'>{text}</span>
           {this.props.isLoading && <ButtonLoader />}
         </button>
