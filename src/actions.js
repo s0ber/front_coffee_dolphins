@@ -13,7 +13,7 @@ export default keyMirror({
   CURRENT_USER_REQUESTED: null,
   UPDATE_CURRENT_USER: null,
 
-  UPDATE_USERS: null,
+  SET_USERS: null,
   DESTROY_USER: null,
   UPDATE_CATEGORIES: null,
   DESTROY_CATEGORY: null,

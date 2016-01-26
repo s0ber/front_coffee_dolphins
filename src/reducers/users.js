@@ -1,8 +1,8 @@
-import {UPDATE_USERS, DESTROY_USER} from 'actions'
+import {SET_USERS, DESTROY_USER} from 'actions'
 
 export default function(state = [], action) {
   switch (action.type) {
-    case(UPDATE_USERS):
+    case(SET_USERS):
       return action.payload
     case DESTROY_USER:
       const userIndex = state.findIndex((user) => user.id == action.payload)

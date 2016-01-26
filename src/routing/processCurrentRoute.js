@@ -1,10 +1,10 @@
 import {routes, paths} from 'routes'
 
 import changePageId from 'actions/changePageId'
-import updateUsers from 'actions/updateUsers'
+import setUsers from 'actions/setUsers'
 import updateCategories from 'actions/updateCategories'
 import setPositions from 'actions/setPositions'
-import updatePosition from 'actions/updatePosition'
+import setPosition from 'actions/setPosition'
 
 import updatePagination from 'actions/updatePagination'
 import resetPagination from 'actions/resetPagination'
@@ -19,7 +19,7 @@ export default function(router, data, dispatch) {
       dispatch(changeCurrentPosition(data.currentPositionId))
       break
     case routes.POSITION:
-      dispatch(updatePosition(data.position))
+      dispatch(setPosition(data.position))
       dispatch(changeCurrentPosition(data.currentPositionId))
       break
     case routes.CATEGORIES:
@@ -29,7 +29,7 @@ export default function(router, data, dispatch) {
       dispatch(updateLandings(data.landings))
       break
     case routes.USERS:
-      dispatch(updateUsers(data.users))
+      dispatch(setUsers(data.users))
       break
     case routes.EXAMPLES:
     case routes.FILTERED_EXAMPLES:
