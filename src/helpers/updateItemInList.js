@@ -1,10 +1,11 @@
 import findItemById from './findItemById'
 
 export default function(state, item, attributes) {
-  const {index} = findItemById(state, item.id)
+  const itemData = findItemById(state, item.id)
+  const index = itemData.index
 
   if (index !== -1) {
-    item = Object.assign({}, item, attributes)
+    item = Object.assign({}, itemData.item, item, attributes)
 
     return [
       ...state.slice(0, index),

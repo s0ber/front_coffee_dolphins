@@ -38,7 +38,11 @@ export default class extends Component {
         </PanelItem.Header>
         <PanelItem.Body>
           { position._edited ?
-            <PositionForm position={position} handleCancelEdit={this.handleCancelEdit} /> :
+            <PositionForm
+              position={position}
+              initialValues={position}
+              formKey={'position' + position.id}
+              handleCancelEdit={this.handleCancelEdit} /> :
             <PositionDetails position={position} /> }
         </PanelItem.Body>
       </PanelItem>
