@@ -22,7 +22,7 @@ export default class extends Component {
       <Page>
         <Page.Title text='Пользователи' />
         <Page.Body>
-          {this.props.users.length ? <UsersList users={this.props.users} onUserDestroy={this.destroyUser} /> :
+          {this.props.users.length ? <UsersList users={this.props.users} handleDestroy={this.destroyUser} /> :
                                      <Text>Нет пользователей.</Text>}
         </Page.Body>
       </Page>

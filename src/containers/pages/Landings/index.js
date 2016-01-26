@@ -22,7 +22,7 @@ export default class extends Component {
       <Page>
         <Page.Title text='Лендинги' />
         <Page.Body>
-          {this.props.landings.length ? <LandingsList onLandingDestroy={this.destroyLanding} landings={this.props.landings} /> :
+          {this.props.landings.length ? <LandingsList handleDestroy={this.destroyLanding} landings={this.props.landings} /> :
                                         <Text>Нет пользователей.</Text>}
         </Page.Body>
       </Page>

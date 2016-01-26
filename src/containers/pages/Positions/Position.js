@@ -8,8 +8,8 @@ import {Chevron} from 'icons/Chevron'
 import {SmallButton} from 'layouts/SmallButton'
 
 export default class extends Component {
-  onPositionDestroy = (e) => {
-    this.props.onPositionDestroy(this.props.position)
+  handleDestroy = (e) => {
+    this.props.handleDestroy(this.props.position)
   }
 
   render() {
@@ -23,7 +23,7 @@ export default class extends Component {
             <Chevron right />
           </Link>
         }>
-          <SmallButton color='red' icon='close' onClick={this.onPositionDestroy} />
+          <SmallButton color='red' icon='close' onClick={this.handleDestroy} />
         </PanelItem.Header>
         <PositionDetails position={position} />
       </PanelItem>

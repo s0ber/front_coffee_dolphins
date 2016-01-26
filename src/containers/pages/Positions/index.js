@@ -30,7 +30,7 @@ export default class extends Component {
           <Page.Body>
             {this.props.positions.length ? <PositionsList
                                              positions={this.props.positions}
-                                             onPositionDestroy={this.destroyPosition}
+                                             handleDestroy={this.destroyPosition}
                                              currentPageNum={this.props.currentPageNum} /> :
                                            <Text>Нет позиций.</Text>}
           </Page.Body>
