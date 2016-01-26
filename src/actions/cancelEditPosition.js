@@ -1,4 +1,4 @@
-import {CANCEL_EDIT_POSITION} from 'action'
+import {CANCEL_EDIT_POSITION} from 'actions'
 
 export default function(positionId) {
   return {

@@ -15,17 +15,18 @@ export class SmallButton extends Component {
 
     const text = this.props.icon ? <i className={classNames('fa', 'fa-' + this.props.icon)} />
                                  : this.props.children || this.props.title
+    const isEnabled = !this.props.disabled
 
     if (this.props.submit) {
       return (
-        <button type='submit' className={buttonClasses} onClick={this.props.onClick}>
+        <button type='submit' className={buttonClasses} onClick={isEnabled && this.props.onClick}>
           <span className='SmallButton-wrap'>{text}</span>
           {this.props.isLoading && <ButtonLoader />}
         </button>
       )
     } else {
       return (
-        <div className={buttonClasses} onClick={this.props.onClick}>
+        <div className={buttonClasses} onClick={isEnabled && this.props.onClick}>
           <span className='SmallButton-wrap'>{text}</span>
           {this.props.isLoading && <ButtonLoader />}
         </div>

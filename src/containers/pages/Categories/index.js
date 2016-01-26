@@ -3,6 +3,8 @@ import {Page} from 'layouts/Page'
 import {connect} from 'react-redux'
 import CategoriesList from './CategoriesList'
 import {Text} from 'inline/Text'
+import editCategory from 'actions/editCategory'
+import cancelEditCategory from 'actions/cancelEditCategory'
 import destroyCategory from 'actions/destroyCategory'
 
 @connect((state) => {
@@ -11,7 +13,15 @@ import destroyCategory from 'actions/destroyCategory'
   }
 })
 export default class extends Component {
-  destroyCategory = (category) => {
+  edit = (category) => {
+    this.props.dispatch(editCategory(category))
+  }
+
+  cancelEdit = (category) => {
+    this.props.dispatch(cancelEditCategory(category))
+  }
+
+  destroy = (category) => {
     if (confirm(`Удалить категорию ${category.title}?`)) {
       this.props.dispatch(destroyCategory(category.id))
     }
@@ -22,7 +32,11 @@ export default class extends Component {
       <Page>
         <Page.Title text='Категории лендингов' />
         <Page.Body>
-          {this.props.categories.length ? <CategoriesList categories={this.props.categories} onCategoryDestroy={this.destroyCategory} /> :
+          {this.props.categories.length ? <CategoriesList
+                                            categories={this.props.categories}
+                                            handleDestroy={this.destroy}
+                                            handleEdit={this.edit}
+                                            handleCancelEdit={this.cancelEdit} /> :
                                           <Text>Нет категорий лендингов.</Text>}
         </Page.Body>
       </Page>

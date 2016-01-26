@@ -1,9 +1,7 @@
 import findItemById from './findItemById'
 
-export default function(state, itemId, attributes) {
-  const itemData = findItemById(state, itemId)
-  const index = itemData.index
-  let item = itemData.item
+export default function(state, item, attributes) {
+  const {index} = findItemById(state, item.id)
 
   if (index !== -1) {
     if (attributes) {

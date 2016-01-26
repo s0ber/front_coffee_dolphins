@@ -4,10 +4,19 @@ import {PanelItem} from 'layouts/PanelItem'
 import {List} from 'layouts/List'
 import {ListItem} from 'layouts/ListItem'
 import {SmallButton} from 'layouts/SmallButton'
+import CategoryForm from './CategoryForm'
 
 export default class extends Component {
-  onCategoryDestroy = (e) => {
-    this.props.onCategoryDestroy(this.props.category)
+  handleEdit = (e) => {
+    this.props.handleEdit(this.props.category)
+  }
+
+  handleCancelEdit = (e) => {
+    this.props.handleCancelEdit(this.props.category)
+  }
+
+  handleDestroy = (e) => {
+    this.props.handleDestroy(this.props.category)
   }
 
   render() {
@@ -16,15 +25,17 @@ export default class extends Component {
     return (
       <PanelItem>
         <PanelItem.Header title={category.title}>
-          <SmallButton color='red' icon='close' onClick={this.onCategoryDestroy} />
+          <SmallButton icon='pencil' onClick={this.handleEdit} disabled={category._edited} />
+          <SmallButton color='red' icon='close' onClick={this.handleDestroy} />
         </PanelItem.Header>
         <PanelItem.Body>
-          <List>
-            <List.Text>{category.description}</List.Text>
-          </List>
+          { category._edited ?
+            <CategoryForm category={category} handleCancelEdit={this.handleCancelEdit} /> :
+            <List>
+              <List.Text>{category.description}</List.Text>
+            </List> }
         </PanelItem.Body>
       </PanelItem>
     )
   }
 }
-

@@ -1,4 +1,4 @@
-import {EDIT_POSITION} from 'action'
+import {EDIT_POSITION} from 'actions'
 
 export default function(positionId) {
   return {

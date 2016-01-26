@@ -1,4 +1,4 @@
-import {CANCEL_EDIT_USER} from 'action'
+import {CANCEL_EDIT_USER} from 'actions'
 
 export default function(userId) {
   return {

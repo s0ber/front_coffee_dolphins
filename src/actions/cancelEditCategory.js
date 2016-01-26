@@ -1,4 +1,4 @@
-import {CANCEL_EDIT_CATEGORY} from 'action'
+import {CANCEL_EDIT_CATEGORY} from 'actions'
 
 export default function(categoryId) {
   return {

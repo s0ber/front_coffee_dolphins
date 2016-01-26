@@ -1,4 +1,4 @@
-import {EDIT_USER} from 'action'
+import {EDIT_USER} from 'actions'
 
 export default function(userId) {
   return {
