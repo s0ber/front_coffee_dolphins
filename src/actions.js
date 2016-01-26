@@ -13,17 +13,24 @@ export default keyMirror({
   CURRENT_USER_REQUESTED: null,
   SET_CURRENT_USER: null,
 
-  SET_USERS: null,
-  DESTROY_USER: null,
-  SET_CATEGORIES: null,
-  DESTROY_CATEGORY: null,
   SET_POSITIONS: null,
   SET_POSITION: null,
-  DESTROY_POSITION: null,
   EDIT_POSITION: null,
   CANCEL_EDIT_POSITION: null,
   UPDATE_POSITION: null,
+  DESTROY_POSITION: null,
   CHANGE_CURRENT_POSITION_ID: null,
+
+  SET_USERS: null,
+  EDIT_USER: null,
+  CANCEL_EDIT_USER: null,
+  DESTROY_USER: null,
+
+  SET_CATEGORIES: null,
+  EDIT_CATEGORY: null,
+  CANCEL_EDIT_CATEGORY: null,
+  DESTROY_CATEGORY: null,
+
   SET_LANDINGS: null,
   DESTROY_LANDING: null,
 
