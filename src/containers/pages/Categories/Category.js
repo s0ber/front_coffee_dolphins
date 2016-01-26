@@ -30,7 +30,11 @@ export default class extends Component {
         </PanelItem.Header>
         <PanelItem.Body>
           { category._edited ?
-            <CategoryForm category={category} handleCancelEdit={this.handleCancelEdit} /> :
+            <CategoryForm
+              category={category}
+              formKey={`category_${category.id}`}
+              initialValues={category}
+              handleCancelEdit={this.handleCancelEdit} /> :
             <List>
               <List.Text>{category.description}</List.Text>
             </List> }

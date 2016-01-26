@@ -1,4 +1,4 @@
-import {SET_CATEGORIES, EDIT_CATEGORY, CANCEL_EDIT_CATEGORY, DESTROY_CATEGORY} from 'actions'
+import {SET_CATEGORIES, EDIT_CATEGORY, CANCEL_EDIT_CATEGORY, UPDATE_CATEGORY, DESTROY_CATEGORY} from 'actions'
 import findItemById from 'helpers/findItemById'
 import updateItemInList from 'helpers/updateItemInList'
 import removeItemFromList from 'helpers/removeItemFromList'
@@ -11,6 +11,8 @@ export default function(state = [], action) {
       return updateItemInList(state, action.payload, {_edited: true})
     case CANCEL_EDIT_CATEGORY:
       return updateItemInList(state, action.payload, {_edited: false})
+    case UPDATE_CATEGORY:
+      return updateItemInList(state, action.payload)
     case DESTROY_CATEGORY:
       const categoryId = action.payload
       return removeItemFromList(state, categoryId)

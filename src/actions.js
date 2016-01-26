@@ -24,10 +24,12 @@ export default keyMirror({
   SET_USERS: null,
   EDIT_USER: null,
   CANCEL_EDIT_USER: null,
+  UPDATE_USER: null,
   DESTROY_USER: null,
 
   SET_CATEGORIES: null,
   EDIT_CATEGORY: null,
+  UPDATE_CATEGORY: null,
   CANCEL_EDIT_CATEGORY: null,
   DESTROY_CATEGORY: null,
 

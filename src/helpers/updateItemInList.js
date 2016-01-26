@@ -4,9 +4,8 @@ export default function(state, item, attributes) {
   const {index} = findItemById(state, item.id)
 
   if (index !== -1) {
-    if (attributes) {
-      item = Object.assign({}, item, attributes)
-    }
+    item = Object.assign({}, item, attributes)
+
     return [
       ...state.slice(0, index),
       item,

@@ -9,7 +9,7 @@ export class Textarea extends Component {
     return (
       <div className='Textarea'>
         <Label {...this.props} />
-        <textarea placeholder={this.props.placeholder} {...this.props} />
+        <textarea placeholder={this.props.placeholder} {...this.props} value={this.props.value || ''} required={false} />
         {this.props.hint && <Hint text={this.props.hint} />}
       </div>
     )
