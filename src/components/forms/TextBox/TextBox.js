@@ -12,7 +12,7 @@ export class TextBox extends Component {
 
     return (
       <div className={textBoxClasses}>
-        {this.props.label && <Label required={this.props.required} {...other} />}
+        {this.props.label && <Label required={required} {...other} />}
         {this.props.password ? <input type='password' {...other} /> :
                                <input type='text' {...other} />}
 

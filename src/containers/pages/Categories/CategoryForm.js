@@ -3,10 +3,9 @@ import {reduxForm} from 'redux-form'
 import updateCategory from 'actions/updateCategory'
 
 import {Form} from 'forms/Form'
-import {SmallButton} from 'layouts/SmallButton'
-
 import {TextBox} from 'forms/TextBox'
 import {Textarea} from 'forms/Textarea'
+import {SmallButton} from 'layouts/SmallButton'
 
 @reduxForm({
   form: 'category',
@@ -18,7 +17,7 @@ export default class extends Component {
   }
 
   render() {
-    const {fields: {id, title, description, slug, html_title, meta_description}} = this.props
+    const {fields: {title, description, slug, html_title, meta_description}} = this.props
 
     return (
       <Form onSubmit={this.props.handleSubmit(this.submit)}>
@@ -32,7 +31,7 @@ export default class extends Component {
 
         <Form.Actions>
           <SmallButton onClick={this.props.handleCancelEdit} title='Отмена' />
-          <SmallButton submit isLoading={this.props.submitting} title='Сохранить' color='green'/>
+          <SmallButton submit isLoading={this.props.submitting} title='Сохранить' color='green' />
         </Form.Actions>
       </Form>
     )

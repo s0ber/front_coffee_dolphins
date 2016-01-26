@@ -31,10 +31,10 @@ export default class extends Component {
         </PanelItem.Header>
         <PanelItem.Body>
           { user._edited ?
-              <UserForm user={user} handleCancelEdit={this.handleCancelEdit} /> :
+              <UserForm user={user} initialValues={user} handleCancelEdit={this.handleCancelEdit} /> :
               <List>
                 <ListItem label='Email'>{user.email}</ListItem>
-                <List.Text>{user.description}</List.Text>
+                {user.description && <List.Text>{user.description}</List.Text>}
               </List> }
         </PanelItem.Body>
       </PanelItem>
