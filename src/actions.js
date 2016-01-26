@@ -22,6 +22,7 @@ export default keyMirror({
   DESTROY_POSITION: null,
   EDIT_POSITION: null,
   CANCEL_EDIT_POSITION: null,
+  UPDATE_POSITION: null,
   CHANGE_CURRENT_POSITION_ID: null,
   SET_LANDINGS: null,
   DESTROY_LANDING: null,

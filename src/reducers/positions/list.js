@@ -1,8 +1,5 @@
 import {SET_POSITIONS, SET_POSITION, DESTROY_POSITION} from 'actions'
-
-function findPosition(state, positionId) {
-  const index = state.findIndex((position) => position.id == action.payload)
-}
+import removeItemFromList from 'helpers/removeItemFromList'
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -11,16 +8,8 @@ export default function(state = [], action) {
     case SET_POSITION:
       return [action.payload]
     case DESTROY_POSITION:
-      const positionIndex = state.findIndex((position) => position.id == action.payload)
-
-      if (positionIndex !== -1) {
-        return [
-          ...state.slice(0, positionIndex),
-          ...state.slice(positionIndex + 1)
-        ]
-      } else {
-        return state
-      }
+      const positionId = action.payload
+      return removeItemFromList(state, positionId)
     default:
       return state
   }
