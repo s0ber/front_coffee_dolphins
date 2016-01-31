@@ -11,7 +11,7 @@ export default function(state = [], action) {
     case CANCEL_EDIT_USER:
       return updateItemInList(state, action.payload, {_edited: false})
     case UPDATE_USER:
-      return updateItemInList(state, action.payload)
+      return updateItemInList(state, action.payload, {_edited: false})
     case DESTROY_USER:
       const userId = action.payload
       return removeItemFromList(state, userId)

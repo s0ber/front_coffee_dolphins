@@ -1,6 +1,5 @@
 import put from 'utils/put'
 import {UPDATE_USER} from 'actions'
-import cancelEditUser from 'actions/users/cancelEditUser'
 
 export default function(user) {
   return (dispatch) => {
@@ -11,8 +10,6 @@ export default function(user) {
             type: UPDATE_USER,
             payload: user
           })
-
-          dispatch(cancelEditUser(user))
         }
       })
   }

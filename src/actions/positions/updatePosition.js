@@ -1,6 +1,5 @@
 import put from 'utils/put'
 import {UPDATE_POSITION} from 'actions'
-import cancelEditPosition from 'actions/positions/cancelEditPosition'
 
 export default function(position) {
   return (dispatch) => {
@@ -11,8 +10,6 @@ export default function(position) {
             type: UPDATE_POSITION,
             payload: position
           })
-
-          dispatch(cancelEditPosition(position))
         }
       })
   }
