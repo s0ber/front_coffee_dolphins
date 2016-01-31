@@ -13,7 +13,7 @@ export default function(state = [], action) {
     case CANCEL_EDIT_POSITION:
       return updateItemInList(state, action.payload, {_edited: false})
     case UPDATE_POSITION:
-      return updateItemInList(state, action.payload)
+      return updateItemInList(state, action.payload, {_edited: false})
     case DESTROY_POSITION:
       const positionId = action.payload
       return removeItemFromList(state, positionId)

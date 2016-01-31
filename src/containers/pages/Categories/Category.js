@@ -11,8 +11,8 @@ export default class extends Component {
     this.props.handleEdit(this.props.category)
   }
 
-  handleCancelEdit = (e) => {
-    this.props.handleCancelEdit(this.props.category)
+  handleCancel = (e) => {
+    this.props.handleCancel(this.props.category)
   }
 
   handleDestroy = (e) => {
@@ -34,7 +34,7 @@ export default class extends Component {
               category={category}
               formKey={`category_${category.id}`}
               initialValues={category}
-              handleCancelEdit={this.handleCancelEdit} /> :
+              handleCancel={this.handleCancel} /> :
             <List>
               <List.Text>{category.description}</List.Text>
             </List> }

@@ -2,7 +2,7 @@ import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
 
 import getCurrentUser from './requests/get_current_user'
-import setCurrentUser from 'actions/setCurrentUser'
+import setCurrentUser from 'actions/currentUser/setCurrentUser'
 
 import fetchDataForRoute from './fetchDataForRoute'
 import processCurrentRoute from './processCurrentRoute'

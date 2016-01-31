@@ -9,8 +9,7 @@ import {Menu} from 'layouts/Menu'
 import CurrentPage from './CurrentPage'
 import {Example as ExampleModal} from './modals/Example'
 
-import logoutUser from 'actions/logoutUser'
-import hideFlashMessage from 'actions/hideFlashMessage'
+import logoutUser from 'actions/currentUser/logoutUser'
 
 const SHOW_MODAL = false
 

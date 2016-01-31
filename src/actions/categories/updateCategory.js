@@ -1,6 +1,5 @@
 import put from 'utils/put'
 import {UPDATE_CATEGORY} from 'actions'
-import cancelEditCategory from 'actions/cancelEditCategory'
 
 export default function(category) {
   return (dispatch) => {
@@ -11,8 +10,6 @@ export default function(category) {
             type: UPDATE_CATEGORY,
             payload: category
           })
-
-          dispatch(cancelEditCategory(category))
         }
       })
   }

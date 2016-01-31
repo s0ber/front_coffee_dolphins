@@ -3,7 +3,7 @@ import {Page} from 'layouts/Page'
 import {connect} from 'react-redux'
 import LandingsList from './LandingsList'
 import {Text} from 'inline/Text'
-import destroyLanding from 'actions/destroyLanding'
+import destroyLanding from 'actions/landings/destroyLanding'
 
 @connect((state) => {
   return {

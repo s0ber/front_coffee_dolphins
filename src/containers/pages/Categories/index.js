@@ -3,9 +3,9 @@ import {Page} from 'layouts/Page'
 import {connect} from 'react-redux'
 import CategoriesList from './CategoriesList'
 import {Text} from 'inline/Text'
-import editCategory from 'actions/editCategory'
-import cancelEditCategory from 'actions/cancelEditCategory'
-import destroyCategory from 'actions/destroyCategory'
+import editCategory from 'actions/categories/editCategory'
+import cancelEditCategory from 'actions/categories/cancelEditCategory'
+import destroyCategory from 'actions/categories/destroyCategory'
 
 @connect((state) => {
   return {
@@ -36,7 +36,7 @@ export default class extends Component {
                                             categories={this.props.categories}
                                             handleDestroy={this.destroy}
                                             handleEdit={this.edit}
-                                            handleCancelEdit={this.cancelEdit} /> :
+                                            handleCancel={this.cancelEdit} /> :
                                           <Text>Нет категорий лендингов.</Text>}
         </Page.Body>
       </Page>

@@ -12,7 +12,7 @@ export default function(state = [], action) {
     case CANCEL_EDIT_CATEGORY:
       return updateItemInList(state, action.payload, {_edited: false})
     case UPDATE_CATEGORY:
-      return updateItemInList(state, action.payload)
+      return updateItemInList(state, action.payload, {_edited: false})
     case DESTROY_CATEGORY:
       const categoryId = action.payload
       return removeItemFromList(state, categoryId)

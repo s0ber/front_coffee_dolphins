@@ -22,6 +22,9 @@ export default keyMirror({
   CHANGE_CURRENT_POSITION_ID: null,
 
   SET_USERS: null,
+  ADD_USER: null,
+  CANCEL_ADD_USER: null,
+  CREATE_USER: null,
   EDIT_USER: null,
   CANCEL_EDIT_USER: null,
   UPDATE_USER: null,

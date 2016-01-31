@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
-import updatePosition from 'actions/updatePosition'
+import updatePosition from 'actions/positions/updatePosition'
 
 import {Form} from 'forms/Form'
 import {TextBox} from 'forms/TextBox'
@@ -31,7 +31,7 @@ export default class extends Component {
         </Form.Fields>
 
         <Form.Actions>
-          <SmallButton onClick={this.props.handleCancelEdit} title='Отмена' />
+          <SmallButton onClick={this.props.handleCancel} title='Отмена' />
           <SmallButton submit isLoading={this.props.submitting} title='Сохранить' color='green'/>
         </Form.Actions>
       </Form>
