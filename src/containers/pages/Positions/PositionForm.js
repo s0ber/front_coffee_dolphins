@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
-import updatePosition from 'actions/updatePosition'
+import updatePosition from 'actions/positions/updatePosition'
 
 import {Form} from 'forms/Form'
 import {TextBox} from 'forms/TextBox'

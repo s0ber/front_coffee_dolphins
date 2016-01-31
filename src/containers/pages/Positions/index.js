@@ -5,9 +5,9 @@ import {connect} from 'react-redux'
 import PositionsList from './PositionsList'
 import {Text} from 'inline/Text'
 
-import editPosition from 'actions/editPosition'
-import cancelEditPosition from 'actions/cancelEditPosition'
-import destroyPosition from 'actions/destroyPosition'
+import editPosition from 'actions/positions/editPosition'
+import cancelEditPosition from 'actions/positions/cancelEditPosition'
+import destroyPosition from 'actions/positions/destroyPosition'
 
 @connect((state) => {
   return {

@@ -1,7 +1,7 @@
 import {ENDPOINT} from 'constants/enpoints'
 import request from 'superagent'
 import Cookie from 'cookies-js'
-import showFlashMessage from 'actions/showFlashMessage'
+import showFlashMessage from 'actions/flashMessages/showFlashMessage'
 
 export default function(path, dispatch) {
   return new Promise((resolve, reject) => {

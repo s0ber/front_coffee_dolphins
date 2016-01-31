@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import UsersList from './UsersList'
 import {Text} from 'inline/Text'
 
-import editUser from 'actions/editUser'
-import cancelEditUser from 'actions/cancelEditUser'
-import destroyUser from 'actions/destroyUser'
+import editUser from 'actions/users/editUser'
+import cancelEditUser from 'actions/users/cancelEditUser'
+import destroyUser from 'actions/users/destroyUser'
 
 @connect((state) => {
   return {

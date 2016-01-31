@@ -2,7 +2,7 @@ import get from 'utils/get'
 import {LOGOUT_USER} from 'actions'
 import {tinyActions} from 'redux-tiny-router'
 import {paths} from 'routes'
-import showFlashMessage from './showFlashMessage'
+import showFlashMessage from 'actions/flashMessages/showFlashMessage'
 
 export default function() {
   return (dispatch) => {

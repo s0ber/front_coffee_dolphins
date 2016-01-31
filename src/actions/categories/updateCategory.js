@@ -1,6 +1,6 @@
 import put from 'utils/put'
 import {UPDATE_CATEGORY} from 'actions'
-import cancelEditCategory from 'actions/cancelEditCategory'
+import cancelEditCategory from 'actions/categories/cancelEditCategory'
 
 export default function(category) {
   return (dispatch) => {

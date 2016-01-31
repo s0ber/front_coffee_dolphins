@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
-import updateCategory from 'actions/updateCategory'
+import updateCategory from 'actions/categories/updateCategory'
 
 import {Form} from 'forms/Form'
 import {TextBox} from 'forms/TextBox'

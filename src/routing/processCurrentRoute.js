@@ -1,16 +1,16 @@
 import {routes, paths} from 'routes'
 
 import changePageId from 'actions/changePageId'
-import setUsers from 'actions/setUsers'
-import setCategories from 'actions/setCategories'
-import setPositions from 'actions/setPositions'
-import setPosition from 'actions/setPosition'
+import setUsers from 'actions/users/setUsers'
+import setCategories from 'actions/categories/setCategories'
+import setPositions from 'actions/positions/setPositions'
+import setPosition from 'actions/positions/setPosition'
 
-import updatePagination from 'actions/updatePagination'
-import resetPagination from 'actions/resetPagination'
+import updatePagination from 'actions/pagination/updatePagination'
+import resetPagination from 'actions/pagination/resetPagination'
 
-import changeCurrentPosition from 'actions/changeCurrentPosition'
-import setLandings from 'actions/setLandings'
+import changeCurrentPosition from 'actions/positions/changeCurrentPosition'
+import setLandings from 'actions/landings/setLandings'
 
 export default function(router, data, dispatch) {
   switch (router.src) {

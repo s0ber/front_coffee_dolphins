@@ -1,6 +1,6 @@
 import put from 'utils/put'
 import {UPDATE_USER} from 'actions'
-import cancelEditUser from 'actions/cancelEditUser'
+import cancelEditUser from 'actions/users/cancelEditUser'
 
 export default function(user) {
   return (dispatch) => {

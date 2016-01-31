@@ -1,6 +1,6 @@
 import put from 'utils/put'
 import {UPDATE_POSITION} from 'actions'
-import cancelEditPosition from 'actions/cancelEditPosition'
+import cancelEditPosition from 'actions/positions/cancelEditPosition'
 
 export default function(position) {
   return (dispatch) => {
