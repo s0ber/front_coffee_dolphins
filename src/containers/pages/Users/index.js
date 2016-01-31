@@ -10,7 +10,7 @@ import destroyUser from 'actions/users/destroyUser'
 
 @connect((state) => {
   return {
-    users: state.users
+    users: state.users.list
   }
 })
 export default class extends Component {
