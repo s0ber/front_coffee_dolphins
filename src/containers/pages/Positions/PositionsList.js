@@ -20,7 +20,7 @@ export default class extends Component {
                 key={'position' + position.id}
                 position={position}
                 handleEdit={this.props.handleEdit}
-                handleCancelEdit={this.props.handleCancelEdit}
+                handleCancel={this.props.handleCancel}
                 handleDestroy={this.props.handleDestroy} />
             )
           })}

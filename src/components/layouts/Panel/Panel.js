@@ -5,7 +5,8 @@ import classNames from 'classnames'
 export class Panel extends Component {
   render() {
     const panelClasses = classNames('Panel', {
-      'for-loginForm': this.props.forLoginForm
+      'for-loginForm': this.props.forLoginForm,
+      'for-newItem': this.props.forNewItem
     })
     return (
       <div className={panelClasses}>{this.props.children}</div>

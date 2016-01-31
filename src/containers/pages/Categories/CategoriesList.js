@@ -13,7 +13,7 @@ export default class extends Component {
               category={category}
               handleDestroy={this.props.handleDestroy}
               handleEdit={this.props.handleEdit}
-              handleCancelEdit={this.props.handleCancelEdit} />
+              handleCancel={this.props.handleCancel} />
           )
         })}
       </ReactCSSTransitionGroup>

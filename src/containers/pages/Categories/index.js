@@ -36,7 +36,7 @@ export default class extends Component {
                                             categories={this.props.categories}
                                             handleDestroy={this.destroy}
                                             handleEdit={this.edit}
-                                            handleCancelEdit={this.cancelEdit} /> :
+                                            handleCancel={this.cancelEdit} /> :
                                           <Text>Нет категорий лендингов.</Text>}
         </Page.Body>
       </Page>

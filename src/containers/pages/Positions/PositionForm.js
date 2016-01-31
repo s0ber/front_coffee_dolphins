@@ -31,7 +31,7 @@ export default class extends Component {
         </Form.Fields>
 
         <Form.Actions>
-          <SmallButton onClick={this.props.handleCancelEdit} title='Отмена' />
+          <SmallButton onClick={this.props.handleCancel} title='Отмена' />
           <SmallButton submit isLoading={this.props.submitting} title='Сохранить' color='green'/>
         </Form.Actions>
       </Form>

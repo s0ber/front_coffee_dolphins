@@ -12,8 +12,8 @@ export default class extends Component {
     this.props.handleEdit(this.props.user)
   }
 
-  handleCancelEdit = (e) => {
-    this.props.handleCancelEdit(this.props.user)
+  handleCancel = (e) => {
+    this.props.handleCancel(this.props.user)
   }
 
   handleDestroy = (e) => {
@@ -32,10 +32,9 @@ export default class extends Component {
         <PanelItem.Body>
           { user._edited ?
               <UserForm
-                user={user}
                 formKey={'user' + user.id}
                 initialValues={user}
-                handleCancelEdit={this.handleCancelEdit} /> :
+                handleCancel={this.handleCancel} /> :
               <List>
                 <ListItem label='Email'>{user.email}</ListItem>
                 {user.description && <List.Text>{user.description}</List.Text>}

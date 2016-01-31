@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {reduxForm} from 'redux-form'
+import createUser from 'actions/users/createUser'
 import updateUser from 'actions/users/updateUser'
 
 import {Form} from 'forms/Form'
@@ -16,7 +17,11 @@ const GENDERS = [{text: 'Парень', value: 'true'}, {text: 'Девушка',
 })
 export default class extends Component {
   submit = (values) => {
-    return this.props.dispatch(updateUser(values))
+    if (this.props.newItemForm) {
+      return this.props.dispatch(createUser(values))
+    } else {
+      return this.props.dispatch(updateUser(values))
+    }
   }
 
   render() {
@@ -34,8 +39,8 @@ export default class extends Component {
         </Form.Fields>
 
         <Form.Actions>
-          <SmallButton onClick={this.props.handleCancelEdit} title='Отмена' />
-          <SmallButton submit title='Сохранить' color='green' isLoading={this.props.submitting} />
+          <SmallButton onClick={this.props.handleCancel} title='Отмена' />
+          <SmallButton submit title={this.props.newItemForm ? 'Добавить пользователя' : 'Сохранить'} color='green' isLoading={this.props.submitting} />
         </Form.Actions>
       </Form>
     )

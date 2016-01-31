@@ -9,7 +9,7 @@ export default function(user) {
         if (res.success) {
           dispatch({
             type: CREATE_USER,
-            payload: user
+            payload: res.user.user
           })
 
           dispatch(cancelAddUser(user))

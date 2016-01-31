@@ -14,8 +14,8 @@ export default class extends Component {
     this.props.handleEdit(this.props.position)
   }
 
-  handleCancelEdit = (e) => {
-    this.props.handleCancelEdit(this.props.position)
+  handleCancel = (e) => {
+    this.props.handleCancel(this.props.position)
   }
 
   handleDestroy = (e) => {
@@ -42,7 +42,7 @@ export default class extends Component {
               position={position}
               initialValues={position}
               formKey={'position' + position.id}
-              handleCancelEdit={this.handleCancelEdit} /> :
+              handleCancel={this.handleCancel} /> :
             <PositionDetails position={position} /> }
         </PanelItem.Body>
       </PanelItem>

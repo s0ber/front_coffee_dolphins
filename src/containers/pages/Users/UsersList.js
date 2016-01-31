@@ -12,7 +12,7 @@ export default class extends Component {
               key={i}
               user={user}
               handleEdit={this.props.handleEdit}
-              handleCancelEdit={this.props.handleCancelEdit}
+              handleCancel={this.props.handleCancel}
               handleDestroy={this.props.handleDestroy} />
           )
         })}

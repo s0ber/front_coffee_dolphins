@@ -42,7 +42,7 @@ export default class extends Component {
             {this.props.positions.length ? <PositionsList
                                              positions={this.props.positions}
                                              handleEdit={this.edit}
-                                             handleCancelEdit={this.cancelEdit}
+                                             handleCancel={this.cancelEdit}
                                              handleDestroy={this.destroy}
                                              currentPageNum={this.props.currentPageNum} /> :
                                            <Text>Нет позиций.</Text>}
